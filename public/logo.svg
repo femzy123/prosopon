@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 80" width="290" height="80">
+  <!-- Circle mark -->
+  <circle cx="32" cy="36" r="26" stroke="#C4A96C" stroke-width="1.5" fill="none"/>
+  <path d="M20 36 L32 24 L44 36" stroke="#C4A96C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M24 36 L32 28 L40 36 L32 44 Z" fill="#F5F0E8"/>
+  <!-- Wordmark -->
+  <text x="68" y="38" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="400" fill="#F5F0E8" letter-spacing="3" dominant-baseline="auto">PROSOPON</text>
+  <text x="69" y="54" font-family="Georgia, 'Times New Roman', serif" font-size="7.5" font-weight="400" fill="#C4A96C" letter-spacing="1.1" textLength="154" lengthAdjust="spacingAndGlyphs" dominant-baseline="auto">Digital Transformation Consult</text>
+</svg>

@@ -102,30 +102,26 @@ export default function AboutPage() {
       </section>
 
       <section className="page-section">
-        <div className="container-prosopon">
-          <Reveal className="surface-panel grid overflow-hidden lg:grid-cols-[0.85fr_1.15fr]">
-            <div className="border-b border-border p-7 sm:p-10 lg:border-b-0 lg:border-r">
+        <Reveal className="container-prosopon partners-proof">
+          <div className="flex flex-col items-start gap-6 justify-center">
+            <div>
               <p className="label-mono mb-5">Partners</p>
-              <h2 className="section-title">Trusted across complex operating environments.</h2>
-              <p className="mt-5 text-muted-foreground">
-                Prosopon has supported enterprise and public sector teams where delivery quality,
-                governance, and stakeholder confidence matter.
-              </p>
+              <h2 className="section-title">Enterprise and public sector credibility.</h2>
             </div>
-            <RevealStagger className="grid gap-px bg-border sm:grid-cols-2" stagger={0.05}>
-              {partners.map(([partner, sector]) => (
-                <RevealItem key={partner}>
-                  <div className="min-h-36 bg-card p-7 transition-colors duration-300 hover:bg-secondary sm:p-8">
-                    <p className="font-serif text-base uppercase tracking-[0.16em] text-foreground">
-                      {partner}
-                    </p>
-                    <p className="label-mono mt-5 text-muted-foreground">{sector}</p>
-                  </div>
-                </RevealItem>
-              ))}
-            </RevealStagger>
-          </Reveal>
-        </div>
+            <p className="text-muted-foreground">
+              A concise proof strip for senior buyers scanning for sector relevance before
+              they read the case studies.
+            </p>
+          </div>
+          <div className="partners-proof__strip">
+            {partners.map(([partner, sector]) => (
+              <div className="partners-proof__item" key={partner}>
+                <p className="partners-proof__sector">{sector}</p>
+                <p className="font-serif text-base uppercase tracking-[0.16em] text-foreground">{partner}</p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
       </section>
 
       <section className="page-section">

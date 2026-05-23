@@ -162,7 +162,7 @@
   }
 
   .page-section {
-    border-bottom: 1px solid var(--border);
+    /* border-bottom: 1px solid var(--border); */
     padding-block: clamp(5rem, 9vw, 8.25rem);
   }
 
@@ -279,6 +279,81 @@
       linear-gradient(145deg, rgba(196, 169, 108, 0.09), transparent 42%),
       rgba(46, 42, 34, 0.92);
     transform: translateY(-0.25rem);
+  }
+
+  .partners-proof {
+    display: grid;
+    gap: clamp(1.25rem, 1.84rem, 2.25rem);
+  }
+
+  .partners-proof__heading {
+    display: grid;
+    grid-template-columns: minmax(0, 0.58fr) minmax(18rem, 0.42fr);
+    gap: 2rem;
+    align-items: end;
+  }
+
+  .partners-proof__strip {
+    display: flex;
+    flex-wrap: wrap;
+    border-block: 1px solid rgba(196, 169, 108, 0.2);
+    background:
+      linear-gradient(90deg, rgba(196, 169, 108, 0.054), transparent 55%),
+      rgba(16, 14, 10, 0.52);
+  }
+
+  .partners-proof__item {
+    display: grid;
+    flex: 1 1 12rem;
+    min-height: clamp(6.5rem, 6.97rem, 8.75rem);
+    align-content: center;
+    gap: 0.9rem;
+    border-right: 1px solid rgba(196, 169, 108, 0.16);
+    padding: clamp(1.15rem, 1.42rem, 1.85rem);
+  }
+
+  .partners-proof__item:last-child {
+    border-right: 0;
+  }
+
+  .partners-proof__sector {
+    color: var(--gold-bright);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 767px) {
+    .partners-proof {
+      gap: 1.5rem;
+    }
+
+    .partners-proof__heading {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .partners-proof__heading .section-title {
+      max-width: 100%;
+      font-size: clamp(2.15rem, 10vw, 3rem);
+      line-height: 1.03;
+    }
+
+    .partners-proof__heading > p {
+      max-width: 34rem;
+    }
+
+    .partners-proof__item {
+      flex-basis: min(100%, 14rem);
+      border-right: 0;
+      border-bottom: 1px solid rgba(196, 169, 108, 0.16);
+    }
+
+    .partners-proof__item:last-child {
+      border-bottom: 0;
+    }
   }
 
   .hero-image-breathe {
