@@ -1,64 +1,73 @@
 import Link from "next/link";
+import { SiteLogo } from "./site-logo";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-background">
-      <div className="container-prosopon py-16">
-        <div className="grid gap-12 md:grid-cols-4">
-          <div className="md:col-span-2">
-            <Link className="flex items-center gap-2" href="/">
-              <span className="grid h-7 w-7 place-items-center rounded-sm bg-primary text-[11px] font-bold text-primary-foreground">
-                P
-              </span>
-              <span className="text-base font-semibold tracking-tight">Prosopon</span>
+    <footer className="border-t border-border bg-[var(--black-brown)]">
+      <div className="container-prosopon py-14">
+        <div className="grid gap-10 lg:grid-cols-[1fr_11rem_11rem_11rem]">
+          <div>
+            <Link aria-label="Prosopon home" className="inline-flex" href="/">
+              <SiteLogo />
             </Link>
-            <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-              A modern tech consulting firm helping startups and enterprises design, build, and
-              scale digital products.
+            <p className="mt-4 max-w-md text-sm text-muted-foreground">
+              Professional services for structured transformation delivery, advisory, and digital
+              enablement.
             </p>
           </div>
 
           <div>
-            <p className="label-mono mb-4">Navigate</p>
-            <ul className="flex flex-col gap-3 text-sm">
+            <h2 className="label-mono mb-4">Explore</h2>
+            <ul className="flex flex-col gap-2 text-sm text-muted-foreground">
               <li>
-                <Link className="text-muted-foreground hover:text-foreground" href="/services">
+                <Link className="hover:text-foreground" href="/services">
                   Services
                 </Link>
               </li>
               <li>
-                <Link className="text-muted-foreground hover:text-foreground" href="/case-studies">
+                <Link className="hover:text-foreground" href="/case-studies">
                   Case Studies
                 </Link>
               </li>
               <li>
-                <Link className="text-muted-foreground hover:text-foreground" href="/about">
+                <Link className="hover:text-foreground" href="/about">
                   About
                 </Link>
               </li>
               <li>
-                <Link className="text-muted-foreground hover:text-foreground" href="/contact">
+                <Link className="hover:text-foreground" href="/contact">
                   Contact
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:text-foreground" href="/privacy">
+                  Privacy
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <p className="label-mono mb-4">Contact</p>
-            <ul className="flex flex-col gap-3 text-sm text-muted-foreground">
-              <li>hello@prosopon.co</li>
-              <li>+1 (415) 555-0144</li>
-              <li>San Francisco · Remote</li>
+            <h2 className="label-mono mb-4">Sectors</h2>
+            <ul className="flex flex-col gap-2 text-sm text-muted-foreground">
+              <li>Financial services</li>
+              <li>Telecommunications</li>
+              <li>Public sector</li>
+              <li>Retail</li>
             </ul>
           </div>
-        </div>
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Prosopon. All rights reserved.
-          </p>
-          <p className="label-mono">Built with intent.</p>
+          <div>
+            <h2 className="label-mono mb-4">Contact</h2>
+            <ul className="flex flex-col gap-2 text-sm text-muted-foreground">
+              <li>
+                <a className="hover:text-foreground" href="mailto:hello@prosopon.co">
+                  hello@prosopon.co
+                </a>
+              </li>
+              <li>Remote-first advisory and delivery</li>
+            </ul>
+          </div>
         </div>
       </div>
     </footer>

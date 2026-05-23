@@ -1,234 +1,185 @@
 import type { Metadata } from "next";
-import { ArrowRight, ArrowUpRight, Compass, LayoutGrid, Workflow } from "lucide-react";
 import Link from "next/link";
 import { CtaSection } from "@/components/site/cta-section";
 import { Reveal, RevealItem, RevealStagger } from "@/components/site/reveal";
 import { SectionHeader } from "@/components/site/section-header";
 
 export const metadata: Metadata = {
-  title: "Prosopon — Transformation Delivery & Advisory",
+  title: "Prosopon | Transformation Delivery and Advisory",
   description:
-    "Prosopon is a Canadian advisory and delivery firm helping banks, telecoms, government, and retail leaders execute complex transformation with disciplined project delivery and AI-informed enablement.",
+    "Prosopon helps banks, telecoms, public sector teams, and retail leaders deliver complex transformation with structured execution and practical AI-informed enablement.",
   openGraph: {
-    title: "Prosopon — Transformation Delivery & Advisory",
+    title: "Prosopon | Transformation Delivery and Advisory",
     description:
-      "Sector-informed advisory and structured project delivery for regulated, complex transformation programs.",
+      "Sector-aware advisory and structured project delivery for regulated, complex transformation programs.",
   },
 };
 
-const services = [
-  {
-    icon: Workflow,
-    title: "Project & Enterprise Delivery",
-    desc: "Project, agile, and enterprise delivery management for complex, regulated, cross-functional programs.",
-  },
-  {
-    icon: LayoutGrid,
-    title: "Digital Enablement",
-    desc: "Operational process improvement, workflow automation, and technology implementation that ships.",
-  },
-  {
-    icon: Compass,
-    title: "Transformation Advisory",
-    desc: "Sector-informed guidance on modernization, execution readiness, and AI-informed transformation governance.",
-  },
-];
-
 const stats = [
-  { value: "2021", label: "Canadian incorporated" },
+  { value: "2021", label: "Canadian incorporated firm" },
   { value: "4", label: "Core sectors served" },
-  { value: "5+", label: "Enterprise partners" },
-  { value: "100%", label: "Growth via referral" },
+  { value: "5+", label: "Enterprise and public sector partners" },
+  { value: "100%", label: "Growth led by referral and delivery trust" },
 ];
 
-const partners = ["BMO", "TD", "Rogers", "TJX Canada", "Gov. of Alberta"];
+const partners = ["BMO", "TD Bank", "Rogers", "TJX Canada", "Government of Alberta"];
 
-const industries = [
-  ["Financial Services", "BMO · TD · wealth & banking platforms"],
-  ["Telecommunications", "Rogers · enterprise authentication, billing & payments"],
-  ["Public Sector", "Government of Alberta · grants, citizen-facing portals"],
-  ["Retail", "TJX Canada · operational & digital enablement"],
+const capabilities = [
+  {
+    number: "01",
+    title: "Enterprise delivery",
+    body: "Project, agile, and enterprise delivery leadership for programs that need structure, pace, and governance.",
+  },
+  {
+    number: "02",
+    title: "Digital enablement",
+    body: "Workflow automation, process improvement, and technology implementation tied to measurable outcomes.",
+  },
+  {
+    number: "03",
+    title: "Transformation advisory",
+    body: "Sector-informed guidance for modernization, execution readiness, governance, and practical AI adoption.",
+  },
 ];
 
-const insights = [
+const methods = [
+  ["01", "Diagnose", "Understand the program context, stakeholders, constraints, risks, and delivery readiness."],
+  ["02", "Structure", "Set the roadmap, governance, team rituals, decision paths, and reporting cadence."],
+  ["03", "Deliver", "Lead cross-functional execution through sprint delivery, dependency management, and release readiness."],
+  ["04", "Transfer", "Leave teams with cleaner operating practices, better visibility, and a stronger execution model."],
+];
+
+const reasons = [
   {
-    tag: "Point of view",
-    date: "2026",
-    title: "Why regulated delivery still beats velocity theatre.",
-    excerpt:
-      "Inside banks and government, structured execution outperforms speed-for-its-own-sake. A short field note on what actually ships.",
+    number: "01",
+    title: "Regulated delivery context",
+    body: "Experience across banking, telecommunications, public sector, and retail environments where governance and stakeholder trust matter.",
   },
   {
-    tag: "Field note",
-    date: "2026",
-    title: "AI-informed advisory, without the hype cycle.",
-    excerpt:
-      "How we evaluate AI inside enterprise programs — narrowly scoped, governance-first, and only where it compounds delivery.",
+    number: "02",
+    title: "Execution over theatre",
+    body: "Clear roadmaps, visible risks, practical ceremonies, and decision paths that keep work moving toward delivery.",
   },
   {
-    tag: "Case insight",
-    date: "2026",
-    title: "Dual-track Agile inside the public sector.",
-    excerpt:
-      "Lessons from delivering a citizen-facing grant portal under audit, accessibility, and procurement constraints.",
+    number: "03",
+    title: "AI with operational restraint",
+    body: "AI-informed advisory focused on useful adoption, workflow fit, data quality, and risk awareness.",
+  },
+  {
+    number: "04",
+    title: "Flexible specialist model",
+    body: "Senior oversight can be paired with external specialists when the work requires deeper technical or domain support.",
   },
 ];
 
 export default function HomePage() {
   return (
     <>
-      <section className="relative -mt-16 overflow-hidden border-b border-border bg-[#0d0a08]">
+      <section className="relative -mt-[4.75rem] min-h-dvh overflow-hidden border-b border-border bg-[var(--black-brown)]">
         <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0"
-          style={{
-            backgroundImage: "url('/hero-bg.jpg')",
-            backgroundPosition: "center right",
-            backgroundSize: "cover",
-          }}
+          aria-hidden="true"
+          className="hero-image-breathe pointer-events-none absolute inset-0 hidden bg-[url('/hero-bg.jpg')] bg-cover bg-center opacity-85 md:block"
         />
         <div
-          aria-hidden
-          className="animate-drift pointer-events-none absolute -left-32 top-1/3 h-[34rem] w-[34rem] rounded-full blur-3xl"
-          style={{
-            background: "radial-gradient(closest-side, rgba(232,160,90,0.18), transparent 70%)",
-          }}
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(16,14,10,0.98),rgba(16,14,10,0.78)_43%,rgba(16,14,10,0.22))]"
         />
-        <div
-          aria-hidden
-          className="animate-drift-2 pointer-events-none absolute -right-40 -top-20 h-[40rem] w-[40rem] rounded-full blur-3xl"
-          style={{
-            background: "radial-gradient(closest-side, rgba(120,90,200,0.14), transparent 70%)",
-          }}
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to right, #0d0a08 0%, rgba(13,10,8,0.92) 45%, rgba(13,10,8,0.55) 75%, rgba(13,10,8,0.2) 100%)",
-          }}
-        />
-        <div aria-hidden className="grain-overlay pointer-events-none absolute inset-0 opacity-[0.07] mix-blend-overlay" />
-        <div className="container-prosopon relative pb-24 pt-40 sm:pb-32 sm:pt-48 lg:pb-40 lg:pt-56">
-          <p className="label-mono animate-rise mb-8 text-white/50" style={{ animationDelay: "60ms" }}>
-            Canadian professional services · Est. 2021
-          </p>
-          <h1
-            className="animate-rise max-w-4xl text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl"
-            style={{ animationDelay: "140ms" }}
-          >
-            Transformation, delivered <br className="hidden sm:block" />
-            with <span className="font-light italic text-white/80">discipline.</span>
-          </h1>
-          <p className="animate-rise mt-8 max-w-xl text-lg text-white/70" style={{ animationDelay: "260ms" }}>
-            Prosopon is a Canadian advisory and delivery firm helping banks, telecoms, government,
-            and retail leaders execute complex transformation — with structured project delivery,
-            sector-informed advisory, and practical AI-era enablement.
-          </p>
-          <div className="animate-rise mt-10 flex flex-wrap gap-3" style={{ animationDelay: "380ms" }}>
-            <Link
-              className="group inline-flex h-12 items-center justify-center gap-2 rounded-md bg-white px-6 text-sm font-medium text-[#0d0a08] transition-colors hover:bg-white/90"
-              href="/contact"
-            >
-              Book a Discovery Call
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-            <Link
-              className="inline-flex h-12 items-center justify-center rounded-md border border-white/25 bg-white/5 px-6 text-sm font-medium text-white backdrop-blur transition-colors hover:bg-white/10"
-              href="/services"
-            >
-              View Services
-            </Link>
+        <div className="container-prosopon relative grid min-h-dvh items-center gap-14 pb-20 pt-36 lg:grid-cols-[minmax(0,0.9fr)_minmax(320px,0.55fr)]">
+          <div>
+            <p className="label-mono animate-rise mb-6">Canadian professional services | Established 2021</p>
+            <h1 className="hero-title animate-rise text-foreground [animation-delay:90ms]">
+              Transformation delivery for complex organizations.
+            </h1>
+            <p className="animate-rise mt-7 max-w-2xl text-lg text-muted-foreground [animation-delay:170ms] sm:text-xl">
+              Prosopon helps banks, telecoms, public sector teams, and retail leaders deliver
+              complex transformation with structured execution, sector-aware advisory, and
+              practical AI-informed enablement.
+            </p>
+            <div className="animate-rise mt-9 flex flex-wrap gap-3 [animation-delay:260ms]">
+              <Link className="gold-button" href="/contact">
+                Start a Conversation
+              </Link>
+              <Link className="ghost-button" href="/services">
+                Explore Services
+              </Link>
+            </div>
           </div>
 
-          <div className="mt-20 grid grid-cols-2 gap-8 border-t border-white/15 pt-10 sm:grid-cols-4">
-            {stats.map((stat) => (
-              <div key={stat.label}>
-                <p className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">{stat.value}</p>
-                <p className="mt-2 text-xs text-white/55">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-b border-border bg-background">
-        <div className="container-prosopon py-12 sm:py-16">
-          <p className="label-mono mb-8 text-center text-muted-foreground">Trusted by leaders at</p>
-          <div className="grid grid-cols-2 items-center gap-8 sm:grid-cols-3 lg:grid-cols-5">
-            {partners.map((partner) => (
-              <div
-                key={partner}
-                className="text-center font-mono text-sm tracking-[0.18em] text-muted-foreground/80 sm:text-base"
-              >
-                {partner.toUpperCase()}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="ambient-glow relative overflow-hidden border-b border-border">
-        <div aria-hidden className="grid-lines pointer-events-none absolute inset-0 opacity-50" />
-        <div className="container-prosopon relative py-24 sm:py-32">
-          <Reveal>
-            <SectionHeader
-              description="We bring delivery patterns proven inside regulated, complex environments — and tailor them to your industry's realities."
-              eyebrow="Industries"
-              title="Sector-informed, not sector-agnostic."
-            />
-          </Reveal>
-          <RevealStagger className="mt-16 grid gap-px border border-border bg-border md:grid-cols-2">
-            {industries.map(([title, description]) => (
-              <RevealItem key={title}>
-                <div className="glow-card group relative h-full border border-transparent p-8 sm:p-10">
-                  <h3 className="text-xl font-semibold tracking-tight transition-colors group-hover:text-foreground">
-                    {title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{description}</p>
-                  <span className="absolute bottom-0 left-0 h-px w-0 bg-foreground/70 transition-all duration-500 group-hover:w-full" />
+          <aside className="surface-panel self-end" aria-label="Prosopon proof points">
+            <h2 className="border-b border-border px-5 py-5 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-muted-foreground">
+              Delivery credibility
+            </h2>
+            <div className="grid grid-cols-2">
+              {stats.map((stat) => (
+                <div className="min-h-28 border-b border-r border-border p-5 even:border-r-0" key={stat.label}>
+                  <p className="text-3xl font-extrabold tracking-tight">{stat.value}</p>
+                  <p className="mt-2 text-xs text-muted-foreground">{stat.label}</p>
                 </div>
+              ))}
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section className="border-b border-border bg-[rgba(16,14,10,0.62)] py-7">
+        <div className="container-prosopon grid grid-cols-2 items-center gap-5 text-center font-serif text-xs uppercase tracking-[0.18em] text-muted-foreground sm:grid-cols-3 lg:grid-cols-5">
+          {partners.map((partner) => (
+            <span key={partner}>{partner}</span>
+          ))}
+        </div>
+      </section>
+
+      <section className="page-section">
+        <div className="container-prosopon">
+          <Reveal className="grid gap-10 md:grid-cols-[minmax(0,0.72fr)_minmax(320px,0.45fr)] md:items-end">
+            <SectionHeader
+              description=""
+              eyebrow="What Prosopon does"
+              title="Senior delivery capability for transformation that cannot drift."
+            />
+            <p className="text-muted-foreground">
+              Prosopon works where execution quality matters: regulated programs,
+              cross-functional delivery, stakeholder complexity, operational modernization, and
+              industry-specific AI adoption.
+            </p>
+          </Reveal>
+          <RevealStagger className="mt-14 grid gap-4 md:grid-cols-3">
+            {capabilities.map((capability) => (
+              <RevealItem className="h-full" key={capability.title}>
+                <article className="noir-card flex min-h-72 h-full flex-col p-7">
+                  <span className="grid h-10 w-10 place-items-center rounded-full border border-border text-xs font-bold text-primary">
+                    {capability.number}
+                  </span>
+                  <h3 className="mt-11 text-2xl font-extrabold tracking-tight">{capability.title}</h3>
+                  <p className="mt-3 text-sm text-muted-foreground">{capability.body}</p>
+                  <Link className="label-mono mt-auto pt-8 hover:text-foreground" href="/services">
+                    View service
+                  </Link>
+                </article>
               </RevealItem>
             ))}
           </RevealStagger>
         </div>
       </section>
 
-      <section className="ambient-glow border-b border-border bg-background">
-        <div className="container-prosopon py-24 sm:py-32">
+      <section className="page-section">
+        <div className="container-prosopon grid gap-12 lg:grid-cols-[0.82fr_1fr]">
           <Reveal>
-            <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-              <SectionHeader
-                description="Short, opinionated points of view from inside complex programs — written by the people doing the work."
-                eyebrow="Insights"
-                title="Field notes from regulated delivery."
-              />
-              <Link className="group inline-flex items-center gap-1.5 text-sm font-medium text-foreground hover:opacity-80" href="/case-studies">
-                See case studies
-                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </Link>
-            </div>
+            <p className="label-mono mb-5">How we work</p>
+            <h2 className="section-title">Disciplined, direct, and built around delivery reality.</h2>
+            <p className="mt-5 max-w-lg text-muted-foreground">
+              The process is intentionally plain. Prosopon embeds quickly, clarifies the operating
+              model, tracks risk, and keeps senior stakeholders close to the work.
+            </p>
           </Reveal>
-
-          <RevealStagger className="mt-16 grid gap-px border border-border bg-border md:grid-cols-3">
-            {insights.map((insight) => (
-              <RevealItem key={insight.title} className="h-full">
-                <article className="glow-card group flex h-full flex-col border border-transparent p-8">
-                  <div className="label-mono flex items-center gap-3">
-                    <span>{insight.tag}</span>
-                    <span className="h-px w-6 bg-border" />
-                    <span>{insight.date}</span>
-                  </div>
-                  <h3 className="mt-8 text-xl font-semibold leading-snug tracking-tight transition-colors group-hover:text-foreground">
-                    {insight.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{insight.excerpt}</p>
-                  <div className="mt-auto pt-10">
-                    <span className="inline-flex items-center gap-1 text-sm font-medium text-foreground">
-                      Read
-                      <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1.5" />
-                    </span>
+          <RevealStagger className="grid gap-3" stagger={0.06}>
+            {methods.map(([number, title, body]) => (
+              <RevealItem key={number}>
+                <article className="surface-panel grid grid-cols-[4.5rem_1fr] gap-5 p-5">
+                  <strong className="label-mono">{number}</strong>
+                  <div>
+                    <h3 className="text-xl font-extrabold tracking-tight">{title}</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">{body}</p>
                   </div>
                 </article>
               </RevealItem>
@@ -237,70 +188,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="ambient-glow border-b border-border bg-muted/30">
-        <div className="container-prosopon py-24 sm:py-32">
-          <Reveal>
-            <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-              <SectionHeader
-                description="From early discovery through enterprise delivery, we plug into your team where it matters most."
-                eyebrow="What we do"
-                title="Three disciplines, one outcome."
-              />
-              <Link className="group inline-flex items-center gap-1.5 text-sm font-medium text-foreground hover:opacity-80" href="/services">
-                All services
-                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </Link>
+      <section className="page-section">
+        <div className="container-prosopon">
+          <Reveal className="grid border border-border bg-border lg:grid-cols-[minmax(0,0.56fr)_minmax(320px,1fr)]">
+            <div className="surface-panel border-0 p-7 sm:p-10">
+              <p className="label-mono mb-5">Why choose us</p>
+              <h2 className="section-title">Senior judgment without the weight of a large firm.</h2>
+              <p className="mt-5 text-muted-foreground">
+                Prosopon is designed for organizations that need credible transformation help,
+                but want direct access to experienced operators rather than a heavy consulting machine.
+              </p>
+            </div>
+            <div className="grid gap-px bg-border sm:grid-cols-2">
+              {reasons.map((reason) => (
+                <article className="bg-card p-7 sm:p-10" key={reason.title}>
+                  <span className="label-mono">{reason.number}</span>
+                  <h3 className="mt-12 text-2xl font-extrabold tracking-tight">{reason.title}</h3>
+                  <p className="mt-3 text-sm text-muted-foreground">{reason.body}</p>
+                </article>
+              ))}
             </div>
           </Reveal>
-
-          <RevealStagger className="mt-16 grid gap-px border border-border bg-border md:grid-cols-3">
-            {services.map((service) => (
-              <RevealItem key={service.title} className="h-full">
-                <div className="glow-card group h-full border border-transparent p-8">
-                  <service.icon className="h-6 w-6 text-foreground transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:scale-105" strokeWidth={1.5} />
-                  <h3 className="mt-8 text-xl font-semibold tracking-tight">{service.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{service.desc}</p>
-                  <Link className="mt-8 inline-flex items-center gap-1 text-sm font-medium text-foreground" href="/services">
-                    Learn more
-                    <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1.5" />
-                  </Link>
-                </div>
-              </RevealItem>
-            ))}
-          </RevealStagger>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden border-b border-border">
-        <div aria-hidden className="grid-lines pointer-events-none absolute inset-0 opacity-40" />
-        <div className="container-prosopon relative py-24 sm:py-32">
-          <div className="grid gap-16 lg:grid-cols-[1fr_1.2fr]">
-            <Reveal>
-              <SectionHeader
-                description="We embed quickly, communicate plainly, and ship in tight iterations. You always know what's happening and why."
-                eyebrow="How we work"
-                title="A clear process. No surprises."
-              />
-            </Reveal>
-            <RevealStagger className="flex flex-col gap-10" stagger={0.1}>
-              {[
-                ["01", "Discover", "Stakeholder interviews, technical audit, and a written point of view within two weeks."],
-                ["02", "Design", "Roadmap, architecture, and the operating model needed to execute confidently."],
-                ["03", "Deliver", "Embedded leadership and weekly checkpoints until the work is in production."],
-                ["04", "Hand off", "Documentation, training, and a clean transition back to your team."],
-              ].map(([number, title, description]) => (
-                <RevealItem key={number}>
-                  <div className="group grid grid-cols-[auto_1fr] gap-6 border-t border-border pt-6 transition-colors hover:border-foreground/40">
-                    <span className="font-mono text-sm text-muted-foreground transition-colors group-hover:text-foreground">{number}</span>
-                    <div>
-                      <h3 className="text-lg font-semibold">{title}</h3>
-                      <p className="mt-2 text-sm text-muted-foreground">{description}</p>
-                    </div>
-                  </div>
-                </RevealItem>
-              ))}
-            </RevealStagger>
-          </div>
         </div>
       </section>
 

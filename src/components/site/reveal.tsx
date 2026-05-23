@@ -23,11 +23,11 @@ export function Reveal({
   const reduce = useReducedMotion();
   const Comp = motion[as] as typeof motion.div;
   const variants: Variants = {
-    hidden: { opacity: 0, y: reduce ? 0 : y },
+    hidden: { opacity: reduce ? 1 : 0, y: reduce ? 0 : y },
     show: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay },
+      transition: { duration: reduce ? 0 : 0.52, ease: [0.22, 1, 0.36, 1], delay },
     },
   };
 
@@ -53,13 +53,15 @@ export function RevealStagger({
   className?: string;
   stagger?: number;
 }) {
+  const reduce = useReducedMotion();
+
   return (
     <motion.div
       className={className}
       initial="hidden"
       variants={{
         hidden: {},
-        show: { transition: { staggerChildren: stagger } },
+        show: { transition: { staggerChildren: reduce ? 0 : stagger } },
       }}
       viewport={{ once: true, margin: "-80px" }}
       whileInView="show"
@@ -84,11 +86,11 @@ export function RevealItem({
     <motion.div
       className={className}
       variants={{
-        hidden: { opacity: 0, y: reduce ? 0 : y },
+        hidden: { opacity: reduce ? 1 : 0, y: reduce ? 0 : y },
         show: {
           opacity: 1,
           y: 0,
-          transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+          transition: { duration: reduce ? 0 : 0.46, ease: [0.22, 1, 0.36, 1] },
         },
       }}
     >

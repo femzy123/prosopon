@@ -3,8 +3,9 @@
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import { cn } from "@/lib/utils";
+import { SiteLogo } from "./site-logo";
 
 const links = [
   { href: "/", label: "Home" },
@@ -18,11 +19,12 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const menuId = useId();
   const isHome = pathname === "/";
   const overHero = isHome && !scrolled && !open;
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -31,39 +33,27 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-colors duration-300",
+        "sticky top-0 z-50 w-full border-b transition-[background,border-color,backdrop-filter] duration-300",
         overHero
-          ? "border-transparent bg-transparent text-white"
-          : scrolled
-            ? "border-border bg-background/85 text-foreground backdrop-blur-md"
-            : "border-transparent bg-background text-foreground",
+          ? "border-transparent bg-transparent"
+          : "border-border bg-background/88 backdrop-blur-[18px]",
       )}
     >
-      <div className="container-prosopon flex h-16 items-center justify-between">
-        <Link className="group flex items-center gap-2" href="/">
-          <span
-            className={cn(
-              "grid h-7 w-7 place-items-center rounded-sm text-[11px] font-bold tracking-tight",
-              overHero ? "bg-white text-[#0d0a08]" : "bg-primary text-primary-foreground",
-            )}
-          >
-            P
-          </span>
-          <span className="text-base font-semibold tracking-tight">Prosopon</span>
+      <div className="container-prosopon flex min-h-[4.75rem] items-center justify-between gap-6">
+        <Link aria-label="Prosopon home" className="shrink-0" href="/">
+          <SiteLogo />
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav aria-label="Primary navigation" className="hidden items-center gap-8 md:flex">
           {links.map((link) => {
             const active = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
             return (
               <Link
                 key={link.href}
+                aria-current={active ? "page" : undefined}
                 className={cn(
-                  "text-sm transition-colors",
-                  overHero
-                    ? "text-white/70 hover:text-white"
-                    : "text-muted-foreground hover:text-foreground",
-                  active && (overHero ? "text-white" : "text-foreground"),
+                  "text-sm text-muted-foreground transition-colors hover:text-foreground",
+                  active && "text-primary",
                 )}
                 href={link.href}
               >
@@ -74,43 +64,41 @@ export function Navbar() {
         </nav>
 
         <div className="hidden md:block">
-          <Link
-            className={cn(
-              "inline-flex h-9 items-center rounded-md px-4 text-sm font-medium transition-colors",
-              overHero
-                ? "bg-white text-[#0d0a08] hover:bg-white/90"
-                : "bg-primary text-primary-foreground hover:bg-foreground",
-            )}
-            href="/contact"
-          >
+          <Link className="gold-button" href="/contact">
             Book a Call
           </Link>
         </div>
 
         <button
-          aria-label="Toggle menu"
-          className={cn(
-            "inline-flex h-9 w-9 items-center justify-center rounded-md md:hidden",
-            overHero ? "hover:bg-white/10" : "hover:bg-muted",
-          )}
+          aria-controls={menuId}
+          aria-expanded={open}
+          aria-label={open ? "Close menu" : "Open menu"}
+          className="inline-flex h-11 w-11 items-center justify-center rounded border border-border bg-background/60 text-primary transition-colors hover:bg-secondary md:hidden"
           onClick={() => setOpen((value) => !value)}
           type="button"
         >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {open ? <X aria-hidden="true" className="h-5 w-5" /> : <Menu aria-hidden="true" className="h-5 w-5" />}
         </button>
       </div>
 
-      {open ? (
-        <div className="border-t border-border bg-background text-foreground md:hidden">
-          <nav className="container-prosopon flex flex-col gap-1 py-4">
+      <div
+        className={cn(
+          "grid border-t border-border bg-background text-foreground transition-[grid-template-rows] duration-200 md:hidden",
+          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
+        )}
+        id={menuId}
+      >
+        <nav aria-label="Mobile navigation" className="container-prosopon min-h-0 overflow-hidden">
+          <div className="flex flex-col gap-2 py-5">
             {links.map((link) => {
               const active = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
               return (
                 <Link
                   key={link.href}
+                  aria-current={active ? "page" : undefined}
                   className={cn(
-                    "rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground",
-                    active && "text-foreground",
+                    "min-h-11 rounded border border-transparent px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:border-border hover:bg-secondary hover:text-foreground",
+                    active && "text-primary",
                   )}
                   href={link.href}
                   onClick={() => setOpen(false)}
@@ -119,16 +107,12 @@ export function Navbar() {
                 </Link>
               );
             })}
-            <Link
-              className="mt-2 inline-flex h-10 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground"
-              href="/contact"
-              onClick={() => setOpen(false)}
-            >
+            <Link className="gold-button mt-2 w-full" href="/contact" onClick={() => setOpen(false)}>
               Book a Call
             </Link>
-          </nav>
-        </div>
-      ) : null}
+          </div>
+        </nav>
+      </div>
     </header>
   );
 }

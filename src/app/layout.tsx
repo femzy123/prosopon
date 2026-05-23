@@ -6,28 +6,25 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://prosopon.co"),
   title: {
-    default: "Prosopon — Tech Consulting for Modern Product Teams",
+    default: "Prosopon | Transformation Delivery and Advisory",
     template: "%s",
   },
   description:
-    "Prosopon is a modern tech consulting firm helping startups and enterprises design, build, and scale digital products through strategy, product, and execution.",
+    "Prosopon is a Canadian professional services firm helping organizations deliver complex transformation through structured execution, sector-aware advisory, and practical digital enablement.",
   authors: [{ name: "Prosopon" }],
   openGraph: {
-    title: "Prosopon — Tech Consulting for Modern Product Teams",
+    title: "Prosopon | Transformation Delivery and Advisory",
     description:
-      "Strategy, product management, and engineering leadership for teams building digital products that scale.",
+      "Structured delivery, advisory, and practical digital enablement for regulated and operationally complex organizations.",
     type: "website",
-    images: [
-      "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fe0ab923-d1d2-4166-96f0-3586f3325e5a/id-preview-4e3299c6--16446757-8054-49c0-b83f-c65c67a11cac.lovable.app-1777233426809.png",
-    ],
+    images: ["/hero-bg.jpg"],
   },
   twitter: {
-    card: "summary",
-    title: "Prosopon — Tech Consulting for Modern Product Teams",
-    description: "Prosopon builds scalable digital products for startups and enterprises.",
-    images: [
-      "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fe0ab923-d1d2-4166-96f0-3586f3325e5a/id-preview-4e3299c6--16446757-8054-49c0-b83f-c65c67a11cac.lovable.app-1777233426809.png",
-    ],
+    card: "summary_large_image",
+    title: "Prosopon | Transformation Delivery and Advisory",
+    description:
+      "Canadian professional services for transformation delivery, advisory, and digital enablement.",
+    images: ["/hero-bg.jpg"],
   },
 };
 
@@ -37,11 +34,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html data-scroll-behavior="smooth" lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
+        <a className="skip-link" href="#main-content">
+          Skip to content
+        </a>
         <div className="flex min-h-screen flex-col">
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1" id="main-content">
+            {children}
+          </main>
           <Footer />
         </div>
       </body>

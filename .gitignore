@@ -24,6 +24,7 @@
 .DS_Store
 *.pem
 /design_system
+/design_concepts
 /docs
 
 # debug

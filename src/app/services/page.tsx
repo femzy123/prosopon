@@ -1,135 +1,135 @@
 import type { Metadata } from "next";
-import { ArrowRight, Check, Compass, LayoutGrid, Workflow } from "lucide-react";
 import Link from "next/link";
 import { CtaSection } from "@/components/site/cta-section";
+import { Reveal, RevealItem, RevealStagger } from "@/components/site/reveal";
 import { SectionHeader } from "@/components/site/section-header";
 
 export const metadata: Metadata = {
-  title: "Services — Prosopon",
+  title: "Services | Prosopon",
   description:
-    "Project & enterprise delivery, digital enablement, transformation support, and sector-informed advisory for organizations executing complex change.",
+    "Project delivery, digital enablement, transformation governance, and AI-informed advisory for organizations executing complex change.",
   openGraph: {
-    title: "Services — Prosopon",
+    title: "Services | Prosopon",
     description:
-      "Disciplined delivery and sector-informed advisory across financial services, telecom, public sector, and retail.",
+      "Disciplined delivery and sector-aware advisory across financial services, telecom, public sector, and retail.",
   },
 };
 
 const services = [
   {
-    icon: Workflow,
-    title: "Project, Agile & Enterprise Delivery",
-    summary: "Embedded delivery leadership for complex, regulated, cross-functional programs.",
-    bullets: [
-      "Scrum, Kanban, and Scaled Agile facilitation",
-      "PI Planning, Scrum of Scrums, RTE coordination",
-      "Risk, dependency, and stakeholder management",
-      "Executive reporting and program governance",
-    ],
+    number: "01",
+    code: "PD",
+    title: "Project, agile, and enterprise delivery",
+    summary:
+      "Embedded leadership for complex programs, including Scrum, Kanban, scaled agile coordination, executive reporting, risk management, and delivery governance.",
   },
   {
-    icon: LayoutGrid,
-    title: "Digital Enablement & Process Improvement",
-    summary: "Operational workflow redesign, automation, and technology implementation.",
-    bullets: [
-      "Workflow automation and tooling rollouts",
-      "CRM and platform implementations (e.g. Salesforce)",
-      "Cloud migration and integration support",
-      "UAT stewardship and release coordination",
-    ],
+    number: "02",
+    code: "DE",
+    title: "Digital enablement and process improvement",
+    summary:
+      "Operational workflow redesign, automation, CRM and platform implementation, UAT stewardship, release coordination, and delivery support for technology change.",
   },
   {
-    icon: Compass,
-    title: "Enterprise & Digital Transformation",
-    summary: "Structured execution of large-scale modernization, including AI adoption.",
-    bullets: [
-      "Transformation roadmaps & operating model design",
-      "Legacy modernization and platform consolidation",
-      "AI adoption planning across core functions",
-      "Change enablement and team upskilling",
-    ],
+    number: "03",
+    code: "DT",
+    title: "Enterprise and digital transformation",
+    summary:
+      "Modernization roadmaps, operating model design, legacy transformation, cloud and integration support, change enablement, and delivery readiness.",
   },
   {
-    icon: Compass,
-    title: "Advisory Services",
-    summary: "Sector-informed guidance for modernization, execution readiness, and governance.",
-    bullets: [
-      "Transformation governance frameworks",
-      "Execution readiness assessments",
-      "AI-informed technology investment guidance",
-      "Trusted-advisor support to senior leadership",
-    ],
+    number: "04",
+    code: "AI",
+    title: "AI-informed advisory",
+    summary:
+      "Practical guidance on where AI can support operations, customer engagement, analytics, and enterprise delivery without creating unmanaged risk.",
   },
+  {
+    number: "05",
+    code: "GV",
+    title: "Transformation governance",
+    summary:
+      "Decision forums, reporting cadence, dependency management, risk escalation, and stakeholder alignment for programs that need visibility and control.",
+  },
+  {
+    number: "06",
+    code: "SP",
+    title: "Specialist delivery support",
+    summary:
+      "A flexible model that combines senior oversight with external specialists and professional service providers when an engagement needs deeper capability.",
+  },
+];
+
+const models = [
+  ["01", "Advisory", "Focused working sessions, executive guidance, readiness reviews, and decision support."],
+  ["02", "Embedded", "Senior operator inside the team, leading delivery rituals, risk, reporting, and stakeholder coordination."],
+  ["03", "Project", "Defined transformation scope with clear outcomes, cadence, governance, and handoff."],
 ];
 
 export default function ServicesPage() {
   return (
     <>
-      <section className="border-b border-border">
-        <div className="container-prosopon py-24 sm:py-32">
-          <p className="label-mono mb-6">Services</p>
-          <h1 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
-            Senior leadership, on demand.
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-            Three core disciplines, scoped to fit your team. Engage us for a sprint, a
-            quarter, or as long as you need to ship the next chapter of your product.
-          </p>
+      <section className="page-section pt-24 sm:pt-32">
+        <div className="container-prosopon">
+          <Reveal>
+            <p className="label-mono mb-6">Services</p>
+            <h1 className="hero-title max-w-5xl">Execution leadership for high-stakes transformation.</h1>
+            <p className="mt-7 max-w-2xl text-lg text-muted-foreground sm:text-xl">
+              Prosopon brings senior delivery judgment to programs where complexity, regulation,
+              and cross-functional coordination cannot be handled by generic playbooks.
+            </p>
+          </Reveal>
         </div>
       </section>
 
-      <section className="border-b border-border bg-muted/40">
-        <div className="container-prosopon py-24 sm:py-32">
-          <div className="flex flex-col gap-px border border-border bg-border">
-            {services.map((service, index) => (
-              <article
-                key={service.title}
-                className="grid gap-10 bg-background p-8 sm:p-12 lg:grid-cols-[1fr_1.4fr]"
-              >
-                <div>
-                  <p className="label-mono mb-4">{`0${index + 1}`}</p>
-                  <service.icon className="h-7 w-7" strokeWidth={1.5} />
-                  <h2 className="mt-6 text-2xl font-semibold tracking-tight sm:text-3xl">
+      <section className="page-section">
+        <div className="container-prosopon">
+          <RevealStagger className="grid gap-4 lg:grid-cols-3">
+            {services.map((service) => (
+              <RevealItem className="h-full" key={service.title}>
+                <article className="noir-card flex min-h-80 h-full flex-col p-7">
+                  <div className="flex items-center gap-2">
+                    <span className="label-mono">{service.number}</span>
+                    <span className="grid h-8 w-8 place-items-center rounded-full border border-border text-xs text-primary">
+                      {service.code}
+                    </span>
+                  </div>
+                  <h2 className="mt-14 text-2xl font-extrabold leading-tight tracking-tight">
                     {service.title}
                   </h2>
-                  <p className="mt-3 text-base text-muted-foreground">{service.summary}</p>
-                </div>
-                <div>
-                  <p className="label-mono mb-6">What&apos;s included</p>
-                  <ul className="grid gap-4 sm:grid-cols-2">
-                    {service.bullets.map((bullet) => (
-                      <li key={bullet} className="flex items-start gap-3 text-sm">
-                        <Check className="mt-0.5 h-4 w-4 shrink-0" strokeWidth={2} />
-                        <span>{bullet}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link className="mt-8 inline-flex items-center gap-1 text-sm font-medium hover:opacity-70" href="/contact">
-                    Discuss this engagement <ArrowRight className="h-3.5 w-3.5" />
+                  <p className="mt-3 text-sm text-muted-foreground">{service.summary}</p>
+                  <Link className="label-mono mt-auto pt-8 hover:text-foreground" href="/contact">
+                    Discuss this service
                   </Link>
-                </div>
-              </article>
+                </article>
+              </RevealItem>
             ))}
-          </div>
+          </RevealStagger>
         </div>
       </section>
 
-      <section className="border-b border-border">
-        <div className="container-prosopon py-24">
-          <SectionHeader eyebrow="Engagement models" title="Flexible by design." />
-          <div className="mt-12 grid gap-px border border-border bg-border md:grid-cols-3">
-            {[
-              ["Advisory", "Weekly working sessions with your leadership team.", "From 4 weeks"],
-              ["Embedded", "Senior operator inside your team, full or part-time.", "From 8 weeks"],
-              ["Project", "Defined scope with a fixed timeline and outcome.", "Custom"],
-            ].map(([title, description, duration]) => (
-              <div key={title} className="bg-background p-8">
-                <h3 className="text-lg font-semibold">{title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{description}</p>
-                <p className="label-mono mt-6">{duration}</p>
-              </div>
+      <section className="page-section">
+        <div className="container-prosopon">
+          <Reveal className="grid gap-10 md:grid-cols-[minmax(0,0.8fr)_minmax(320px,0.45fr)] md:items-end">
+            <SectionHeader eyebrow="Engagement models" title="Flexible by design, senior by default." />
+            <p className="text-muted-foreground">
+              Prosopon can advise leadership, embed into delivery, or lead a defined
+              transformation workstream. The model follows the problem, not a preset package.
+            </p>
+          </Reveal>
+          <RevealStagger className="mt-12 grid gap-3" stagger={0.06}>
+            {models.map(([number, title, description]) => (
+              <RevealItem key={title}>
+                <article className="surface-panel grid gap-5 p-6 sm:grid-cols-[4rem_1fr] sm:p-7">
+                  <strong className="label-mono">{number}</strong>
+                  <div>
+                    <h2 className="text-xl font-extrabold tracking-tight">{title}</h2>
+                    <p className="mt-1 text-sm text-muted-foreground">{description}</p>
+                  </div>
+                </article>
+              </RevealItem>
             ))}
-          </div>
+          </RevealStagger>
         </div>
       </section>
 
