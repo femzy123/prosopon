@@ -26,6 +26,7 @@
 /design_system
 /design_concepts
 /docs
+/.impeccable
 
 # debug
 npm-debug.log*
