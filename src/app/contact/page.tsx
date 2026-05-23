@@ -45,7 +45,7 @@ export default function ContactPage() {
                   hello@prosopon.co
                 </a>
               </p>
-              <p className="mt-4 text-muted-foreground">Remote-first advisory and delivery support</p>
+              <p className="mt-4 text-muted-foreground">Initial inquiries are handled by email.</p>
             </aside>
           </Reveal>
         </div>

@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-[var(--black-brown)]">
       <div className="container-prosopon py-14">
-        <div className="grid gap-10 lg:grid-cols-[1fr_11rem_11rem_11rem]">
+        <div className="grid gap-10 lg:grid-cols-[1fr_12rem_14rem]">
           <div>
             <Link aria-label="Prosopon home" className="inline-flex" href="/">
               <SiteLogo />
@@ -48,16 +48,6 @@ export function Footer() {
           </div>
 
           <div>
-            <h2 className="label-mono mb-4">Sectors</h2>
-            <ul className="flex flex-col gap-2 text-sm text-muted-foreground">
-              <li>Financial services</li>
-              <li>Telecommunications</li>
-              <li>Public sector</li>
-              <li>Retail</li>
-            </ul>
-          </div>
-
-          <div>
             <h2 className="label-mono mb-4">Contact</h2>
             <ul className="flex flex-col gap-2 text-sm text-muted-foreground">
               <li>
@@ -65,7 +55,6 @@ export function Footer() {
                   hello@prosopon.co
                 </a>
               </li>
-              <li>Remote-first advisory and delivery</li>
             </ul>
           </div>
         </div>

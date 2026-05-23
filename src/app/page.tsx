@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BrainCircuit, BriefcaseBusiness, Compass, Cog, ShieldCheck, UsersRound } from "lucide-react";
 import Link from "next/link";
 import { CtaSection } from "@/components/site/cta-section";
 import { Reveal, RevealItem, RevealStagger } from "@/components/site/reveal";
@@ -26,17 +27,17 @@ const partners = ["BMO", "TD Bank", "Rogers", "TJX Canada", "Government of Alber
 
 const capabilities = [
   {
-    number: "01",
+    icon: BriefcaseBusiness,
     title: "Enterprise delivery",
     body: "Project, agile, and enterprise delivery leadership for programs that need structure, pace, and governance.",
   },
   {
-    number: "02",
+    icon: Cog,
     title: "Digital enablement",
     body: "Workflow automation, process improvement, and technology implementation tied to measurable outcomes.",
   },
   {
-    number: "03",
+    icon: Compass,
     title: "Transformation advisory",
     body: "Sector-informed guidance for modernization, execution readiness, governance, and practical AI adoption.",
   },
@@ -51,22 +52,22 @@ const methods = [
 
 const reasons = [
   {
-    number: "01",
+    icon: ShieldCheck,
     title: "Regulated delivery context",
     body: "Experience across banking, telecommunications, public sector, and retail environments where governance and stakeholder trust matter.",
   },
   {
-    number: "02",
+    icon: BriefcaseBusiness,
     title: "Execution over theatre",
     body: "Clear roadmaps, visible risks, practical ceremonies, and decision paths that keep work moving toward delivery.",
   },
   {
-    number: "03",
+    icon: BrainCircuit,
     title: "AI with operational restraint",
     body: "AI-informed advisory focused on useful adoption, workflow fit, data quality, and risk awareness.",
   },
   {
-    number: "04",
+    icon: UsersRound,
     title: "Flexible specialist model",
     body: "Senior oversight can be paired with external specialists when the work requires deeper technical or domain support.",
   },
@@ -148,7 +149,7 @@ export default function HomePage() {
               <RevealItem className="h-full" key={capability.title}>
                 <article className="noir-card flex min-h-72 h-full flex-col p-7">
                   <span className="grid h-10 w-10 place-items-center rounded-full border border-border text-xs font-bold text-primary">
-                    {capability.number}
+                    <capability.icon aria-hidden="true" className="h-5 w-5" strokeWidth={1.7} />
                   </span>
                   <h3 className="mt-11 text-2xl font-extrabold tracking-tight">{capability.title}</h3>
                   <p className="mt-3 text-sm text-muted-foreground">{capability.body}</p>
@@ -202,7 +203,9 @@ export default function HomePage() {
             <div className="grid gap-px bg-border sm:grid-cols-2">
               {reasons.map((reason) => (
                 <article className="bg-card p-7 sm:p-10" key={reason.title}>
-                  <span className="label-mono">{reason.number}</span>
+                  <span className="grid h-10 w-10 place-items-center rounded-full border border-border text-primary">
+                    <reason.icon aria-hidden="true" className="h-5 w-5" strokeWidth={1.7} />
+                  </span>
                   <h3 className="mt-12 text-2xl font-extrabold tracking-tight">{reason.title}</h3>
                   <p className="mt-3 text-sm text-muted-foreground">{reason.body}</p>
                 </article>

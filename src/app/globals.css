@@ -86,19 +86,6 @@
     text-rendering: optimizeLegibility;
   }
 
-  body::before {
-    position: fixed;
-    inset: 0;
-    z-index: -2;
-    pointer-events: none;
-    content: "";
-    background-image:
-      linear-gradient(rgba(196, 169, 108, 0.028) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(196, 169, 108, 0.028) 1px, transparent 1px);
-    background-size: 56px 56px;
-    mask-image: radial-gradient(circle at center, black, transparent 72%);
-  }
-
   body::after {
     position: fixed;
     inset: 0;
@@ -279,12 +266,19 @@
     transform: translateY(-2px);
   }
 
-  .grid-lines {
-    background-image:
-      linear-gradient(to right, rgba(196, 169, 108, 0.045) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(196, 169, 108, 0.045) 1px, transparent 1px);
-    background-size: 56px 56px;
-    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  .case-study-card {
+    transition:
+      transform 220ms ease,
+      border-color 220ms ease,
+      background 220ms ease;
+  }
+
+  .case-study-card:hover {
+    border-color: rgba(225, 196, 133, 0.45);
+    background:
+      linear-gradient(145deg, rgba(196, 169, 108, 0.09), transparent 42%),
+      rgba(46, 42, 34, 0.92);
+    transform: translateY(-0.25rem);
   }
 
   .hero-image-breathe {

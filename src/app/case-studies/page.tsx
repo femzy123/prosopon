@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ChartNoAxesCombined, Landmark, RadioTower } from "lucide-react";
 import { CtaSection } from "@/components/site/cta-section";
 import { Reveal, RevealItem, RevealStagger } from "@/components/site/reveal";
 
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 
 const studies = [
   {
-    number: "01",
+    icon: Landmark,
     company: "Government of Alberta Ministry of Municipal Affairs",
     meta: "Public sector | Grant application portal | Under $2M",
     paragraphs: [
@@ -29,7 +30,7 @@ const studies = [
     ],
   },
   {
-    number: "02",
+    icon: RadioTower,
     company: "Rogers Communications",
     meta: "Telecommunications | Identity, billing, payments | Near $1M",
     paragraphs: [
@@ -43,7 +44,7 @@ const studies = [
     ],
   },
   {
-    number: "03",
+    icon: ChartNoAxesCombined,
     company: "Honey Wealth Asset Management",
     meta: "Financial services | CRM rollout | Under $700K",
     paragraphs: [
@@ -78,9 +79,11 @@ export default function CaseStudiesPage() {
         <RevealStagger className="container-prosopon grid gap-5" stagger={0.08}>
           {studies.map((study) => (
             <RevealItem key={study.company}>
-              <article className="surface-panel grid gap-9 p-6 sm:p-10 lg:grid-cols-[minmax(0,0.65fr)_minmax(320px,1fr)]">
+              <article className="case-study-card surface-panel group grid gap-9 p-6 sm:p-10 lg:grid-cols-[minmax(0,0.65fr)_minmax(320px,1fr)]">
                 <div>
-                  <span className="label-mono">{study.number}</span>
+                  <span className="grid h-11 w-11 place-items-center rounded-full border border-border text-primary transition-colors duration-300 group-hover:border-primary/60 group-hover:text-[var(--gold-bright)]">
+                    <study.icon aria-hidden="true" className="h-5 w-5" strokeWidth={1.7} />
+                  </span>
                   <p className="label-mono mt-3">{study.meta}</p>
                   <h2 className="mt-5 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
                     {study.company}

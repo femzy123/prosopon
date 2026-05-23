@@ -33,7 +33,13 @@ const differentiators = [
   ],
 ];
 
-const partners = ["Bank of Montreal", "TD Bank", "Rogers Communications", "TJX Canada", "Government of Alberta"];
+const partners = [
+  ["Bank of Montreal", "Financial services"],
+  ["TD Bank", "Financial services"],
+  ["Rogers Communications", "Telecommunications"],
+  ["TJX Canada", "Retail"],
+  ["Government of Alberta", "Public sector"],
+];
 
 export default function AboutPage() {
   return (
@@ -97,24 +103,28 @@ export default function AboutPage() {
 
       <section className="page-section">
         <div className="container-prosopon">
-          <Reveal>
-            <SectionHeader
-              description="A selection of organizations Prosopon has supported through delivery and advisory engagements."
-              eyebrow="Partners"
-              title="Trusted by enterprise leaders."
-            />
+          <Reveal className="surface-panel grid overflow-hidden lg:grid-cols-[0.85fr_1.15fr]">
+            <div className="border-b border-border p-7 sm:p-10 lg:border-b-0 lg:border-r">
+              <p className="label-mono mb-5">Partners</p>
+              <h2 className="section-title">Trusted across complex operating environments.</h2>
+              <p className="mt-5 text-muted-foreground">
+                Prosopon has supported enterprise and public sector teams where delivery quality,
+                governance, and stakeholder confidence matter.
+              </p>
+            </div>
+            <RevealStagger className="grid gap-px bg-border sm:grid-cols-2" stagger={0.05}>
+              {partners.map(([partner, sector]) => (
+                <RevealItem key={partner}>
+                  <div className="min-h-36 bg-card p-7 transition-colors duration-300 hover:bg-secondary sm:p-8">
+                    <p className="font-serif text-base uppercase tracking-[0.16em] text-foreground">
+                      {partner}
+                    </p>
+                    <p className="label-mono mt-5 text-muted-foreground">{sector}</p>
+                  </div>
+                </RevealItem>
+              ))}
+            </RevealStagger>
           </Reveal>
-          <RevealStagger className="mt-12 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-5">
-            {partners.map((partner) => (
-              <RevealItem key={partner}>
-                <div className="bg-card p-6 text-center">
-                  <p className="font-serif text-xs uppercase tracking-[0.16em] text-muted-foreground">
-                    {partner}
-                  </p>
-                </div>
-              </RevealItem>
-            ))}
-          </RevealStagger>
         </div>
       </section>
 
