@@ -3,6 +3,22 @@ import { Footer } from "@/components/site/footer";
 import { Navbar } from "@/components/site/navbar";
 import "./globals.css";
 
+import { Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
+
+const hankenGrotesk = Hanken_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-hanken-grotesk",
+  display: "swap",
+});
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://prosopon.co"),
   title: {
@@ -34,7 +50,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html data-scroll-behavior="smooth" lang="en" suppressHydrationWarning>
+    <html
+      data-scroll-behavior="smooth"
+      lang="en"
+      className={`${hankenGrotesk.variable} ${jetBrainsMono.variable}`}
+      suppressHydrationWarning
+    >
       <body suppressHydrationWarning>
         <a className="skip-link" href="#main-content">
           Skip to content

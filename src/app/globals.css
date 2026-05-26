@@ -4,8 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: "Segoe UI Variable", "Segoe UI", system-ui, -apple-system, sans-serif;
-  --font-serif: Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-hanken-grotesk), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+  --font-serif: var(--font-hanken-grotesk), system-ui, -apple-system, sans-serif;
   --tracking-label: 0.18em;
   --radius-sm: calc(var(--radius) - 2px);
   --radius-md: var(--radius);
@@ -81,9 +82,19 @@
     background-color: var(--background);
     background:
       linear-gradient(180deg, rgba(245, 240, 232, 0.025), transparent 18rem),
-      linear-gradient(112deg, transparent 0 18%, rgba(196, 169, 108, 0.075) 18.08%, transparent 18.34% 100%),
+      linear-gradient(
+        112deg,
+        transparent 0 18%,
+        rgba(196, 169, 108, 0.075) 18.08%,
+        transparent 18.34% 100%
+      ),
       linear-gradient(154deg, rgba(92, 80, 64, 0.28) 0 13%, transparent 34%),
-      linear-gradient(180deg, var(--night), var(--obsidian) 44%, var(--black-brown));
+      linear-gradient(
+        180deg,
+        var(--night),
+        var(--obsidian) 44%,
+        var(--black-brown)
+      );
     background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-sans);
@@ -98,14 +109,35 @@
     pointer-events: none;
     content: "";
     background:
-      linear-gradient(118deg, transparent 0 31%, rgba(196, 169, 108, 0.095) 42%, rgba(245, 240, 232, 0.032) 45%, transparent 58% 100%),
-      linear-gradient(104deg, transparent 0 8%, rgba(225, 196, 133, 0.07) 8.1%, transparent 8.3% 100%),
-      linear-gradient(72deg, transparent 0 61%, rgba(245, 240, 232, 0.04) 61.06%, transparent 61.22% 100%),
+      linear-gradient(
+        118deg,
+        transparent 0 31%,
+        rgba(196, 169, 108, 0.095) 42%,
+        rgba(245, 240, 232, 0.032) 45%,
+        transparent 58% 100%
+      ),
+      linear-gradient(
+        104deg,
+        transparent 0 8%,
+        rgba(225, 196, 133, 0.07) 8.1%,
+        transparent 8.3% 100%
+      ),
+      linear-gradient(
+        72deg,
+        transparent 0 61%,
+        rgba(245, 240, 232, 0.04) 61.06%,
+        transparent 61.22% 100%
+      ),
       linear-gradient(180deg, rgba(16, 14, 10, 0.1), rgba(16, 14, 10, 0.54));
-    background-size: 145% 145%, 125% 125%, 128% 128%, 100% 100%;
+    background-size:
+      145% 145%,
+      125% 125%,
+      128% 128%,
+      100% 100%;
     opacity: 0.94;
     transform: translate3d(-4%, 0, 0) scale(1.045);
-    animation: architectural-drift 28s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
+    animation: architectural-drift 28s cubic-bezier(0.22, 1, 0.36, 1) infinite
+      alternate;
     will-change: transform, opacity, background-position;
   }
 
@@ -220,6 +252,7 @@
     font-weight: 700;
     letter-spacing: var(--tracking-label);
     text-transform: uppercase;
+    font-family: var(--font-mono);
   }
 
   .page-section {
@@ -239,8 +272,18 @@
     pointer-events: none;
     content: "";
     background:
-      linear-gradient(108deg, transparent 0 12%, rgba(196, 169, 108, 0.034) 12.08%, transparent 12.22% 100%),
-      linear-gradient(78deg, transparent 0 78%, rgba(245, 240, 232, 0.018) 78.04%, transparent 78.16% 100%);
+      linear-gradient(
+        108deg,
+        transparent 0 12%,
+        rgba(196, 169, 108, 0.034) 12.08%,
+        transparent 12.22% 100%
+      ),
+      linear-gradient(
+        78deg,
+        transparent 0 78%,
+        rgba(245, 240, 232, 0.018) 78.04%,
+        transparent 78.16% 100%
+      );
     opacity: 0.7;
   }
 
@@ -251,7 +294,7 @@
 
   .hero-title {
     max-width: 58rem;
-    font-size: clamp(3.3rem, 7.2vw, 6.75rem);
+    /* font-size: clamp(3.3rem, 7.2vw, 6.75rem); */
     font-weight: 800;
     letter-spacing: -0.055em;
     line-height: 0.94;
@@ -259,7 +302,7 @@
 
   .section-title {
     max-width: 48rem;
-    font-size: clamp(2.35rem, 4.6vw, 4.125rem);
+    font-size: clamp(2rem, 3.4vw, 3.25rem);
     font-weight: 750;
     letter-spacing: -0.045em;
     line-height: 1.02;
@@ -267,6 +310,46 @@
 
   .text-measure {
     max-width: 43rem;
+  }
+
+  .home-partners-strip {
+    border-bottom: 1px solid rgba(196, 169, 108, 0.12);
+    background:
+      linear-gradient(180deg, rgba(245, 240, 232, 0.018), transparent),
+      rgba(16, 14, 10, 0.62);
+  }
+
+  .home-partners-strip__label {
+    color: rgba(207, 197, 181, 0.72);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.34em;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .home-partners-strip__names {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(3.5rem, 7vw, 7.25rem);
+    margin-inline: auto;
+    margin-top: clamp(1.95rem, 3.8vw, 2.65rem);
+    max-width: 75rem;
+    text-align: center;
+  }
+
+  .home-partners-strip__name {
+    color: var(--antique-gold);
+    font-family: var(--font-mono);
+    font-size: clamp(0.92rem, 1.15vw, 1.25rem);
+    font-weight: 400;
+    letter-spacing: 0.34em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    white-space: nowrap;
   }
 
   .surface-panel {
@@ -412,6 +495,33 @@
   }
 
   @media (max-width: 767px) {
+    .home-partners-strip {
+      padding-block: 2.75rem;
+    }
+
+    .home-partners-strip__label {
+      font-size: 0.62rem;
+      letter-spacing: 0.28em;
+    }
+
+    .home-partners-strip__names {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.8rem 1rem;
+      margin-top: 2.15rem;
+      max-width: 23rem;
+    }
+
+    .home-partners-strip__name {
+      font-size: 0.82rem;
+      letter-spacing: 0.24em;
+      white-space: normal;
+    }
+
+    .home-partners-strip__name:last-child {
+      grid-column: 1 / -1;
+    }
+
     .partners-proof {
       gap: 1.5rem;
     }
