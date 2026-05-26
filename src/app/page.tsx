@@ -90,7 +90,7 @@ export default function HomePage() {
             <p className="label-mono animate-rise mb-6">
               Canadian professional services | Established 2021
             </p>
-            <h1 className="hero-title text-5xl sm:text-7xl animate-rise text-foreground [animation-delay:90ms]">
+            <h1 className="hero-title animate-rise text-foreground [animation-delay:90ms]">
               Transformation, delivered with{" "}
               <span className="italic text-(--antique-gold) font-light">
                 discipline
