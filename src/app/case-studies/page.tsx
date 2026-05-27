@@ -97,7 +97,7 @@ export default function CaseStudiesPage() {
                   ))}
                   <div className="mt-7 grid gap-px border border-border bg-border sm:grid-cols-3">
                     {study.points.map(([value, label]) => (
-                      <div className="bg-[var(--black-brown)] p-5" key={label}>
+                      <div className="bg-white/65 p-5" key={label}>
                         <strong className="block text-xl tracking-tight">{value}</strong>
                         <span className="mt-2 block text-xs leading-relaxed text-muted-foreground">
                           {label}

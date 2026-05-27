@@ -4,8 +4,8 @@ export function CtaSection() {
   return (
     <section className="page-section">
       <div className="container-prosopon">
-        <div className="surface-panel px-6 py-14 text-center sm:px-12 lg:px-20">
-          <p className="label-mono mb-6">Next step</p>
+        <div className="border border-[rgba(196,169,108,0.36)] bg-[var(--obsidian)] px-6 py-14 text-center text-[var(--parchment)] shadow-[0_24px_80px_rgba(28,26,22,0.18)] [--foreground:#f5f0e8] [--muted-foreground:rgba(245,240,232,0.74)] sm:px-12 lg:px-20">
+          <p className="label-mono mb-6 text-[var(--antique-gold)]">Next step</p>
           <h2 className="mx-auto max-w-4xl text-3xl font-extrabold tracking-[-0.045em] sm:text-5xl">
             Bring structure to the work that matters.
           </h2>

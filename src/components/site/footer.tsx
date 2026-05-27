@@ -3,12 +3,12 @@ import { SiteLogo } from "./site-logo";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-[var(--black-brown)]">
+    <footer className="border-t border-[rgba(196,169,108,0.22)] bg-[var(--obsidian)] text-[var(--parchment)] [--foreground:#f5f0e8] [--muted-foreground:rgba(245,240,232,0.72)]">
       <div className="container-prosopon py-14">
         <div className="grid gap-10 lg:grid-cols-[1fr_12rem_14rem]">
           <div>
             <Link aria-label="Prosopon home" className="inline-flex" href="/">
-              <SiteLogo />
+              <SiteLogo tone="dark" />
             </Link>
             <p className="mt-4 max-w-md text-sm text-muted-foreground">
               Professional services for structured transformation delivery, advisory, and digital

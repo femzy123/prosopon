@@ -77,14 +77,18 @@ const reasons = [
 export default function HomePage() {
   return (
     <>
-      <section className="relative -mt-19 min-h-dvh overflow-hidden border-b border-border bg-(--black-brown)">
+      <section className="relative -mt-19 min-h-dvh overflow-hidden border-b border-border bg-(--parchment)">
         <div
           aria-hidden="true"
-          className="hero-image-breathe pointer-events-none absolute inset-0 hidden bg-[url('/hero-bg.jpg')] bg-cover bg-center opacity-85 md:block"
+          className="hero-image-breathe pointer-events-none absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-center opacity-42 md:opacity-58"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(16,14,10,0.98),rgba(16,14,10,0.78)_43%,rgba(16,14,10,0.22))]"
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(245,240,232,0.98),rgba(245,240,232,0.84)_45%,rgba(245,240,232,0.44)_72%,rgba(28,26,22,0.2))]"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(112deg,transparent_0_16%,rgba(196,169,108,0.28)_16.08%,transparent_16.28%_100%),linear-gradient(72deg,transparent_0_67%,rgba(92,80,64,0.16)_67.08%,transparent_67.22%_100%)]"
         />
         <div className="container-prosopon relative grid min-h-dvh items-center gap-14 pb-20 pt-36 lg:grid-cols-[minmax(0,0.9fr)_minmax(320px,0.55fr)]">
           <div>
@@ -147,7 +151,7 @@ export default function HomePage() {
               <div className="home-partners-strip__group">
                 {marqueePartners.map((partner, index) => (
                   <span
-                    className="home-partners-strip__name max-md:[text-shadow:0_0_18px_rgba(245,240,232,0.65),0_2px_14px_rgba(245,240,232,0.16),0_2px_14px_rgba(0,0,0,0.5)]"
+                    className="home-partners-strip__name"
                     key={`${partner}-${index}`}
                   >
                     {partner}

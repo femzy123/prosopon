@@ -39,7 +39,7 @@ export function ContactForm() {
                       Service interest
                     </label>
                     <select
-                      className="min-h-12 w-full rounded border border-input bg-[var(--black-brown)] px-3 text-sm text-foreground transition-colors focus:border-primary"
+                      className="min-h-12 w-full rounded border border-input bg-white/70 px-3 text-sm text-foreground transition-colors focus:border-primary"
                       id="service"
                       name="service"
                     >
@@ -54,7 +54,7 @@ export function ContactForm() {
                       Message
                     </label>
                     <textarea
-                      className="min-h-36 w-full resize-y rounded border border-input bg-[var(--black-brown)] px-3 py-3 text-sm text-foreground transition-colors focus:border-primary"
+                      className="min-h-36 w-full resize-y rounded border border-input bg-white/70 px-3 py-3 text-sm text-foreground transition-colors focus:border-primary"
                       id="message"
                       name="message"
                       required
@@ -115,7 +115,7 @@ function Field({
       </label>
       <input
         autoComplete={autoComplete}
-        className="min-h-12 w-full rounded border border-input bg-[var(--black-brown)] px-3 text-sm text-foreground transition-colors focus:border-primary"
+        className="min-h-12 w-full rounded border border-input bg-white/70 px-3 text-sm text-foreground transition-colors focus:border-primary"
         id={name}
         name={name}
         required={required}
