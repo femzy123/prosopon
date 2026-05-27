@@ -24,6 +24,7 @@ const stats = [
 ];
 
 const partners = ["BMO", "TD", "Rogers", "TJX Canada", "Gov. of Alberta"];
+const marqueePartners = [...partners, ...partners];
 
 const capabilities = [
   {
@@ -142,14 +143,25 @@ export default function HomePage() {
         <div className="container-prosopon">
           <p className="home-partners-strip__label">Trusted by leaders at</p>
           <div className="home-partners-strip__names">
-            {partners.map((partner) => (
-              <span
-                className="home-partners-strip__name max-md:[text-shadow:0_0_18px_rgba(245,240,232,0.65),0_2px_14px_rgba(245,240,232,0.16),0_2px_14px_rgba(0,0,0,0.5)]"
-                key={partner}
-              >
-                {partner}
-              </span>
-            ))}
+            <div className="home-partners-strip__track">
+              <div className="home-partners-strip__group">
+                {marqueePartners.map((partner, index) => (
+                  <span
+                    className="home-partners-strip__name max-md:[text-shadow:0_0_18px_rgba(245,240,232,0.65),0_2px_14px_rgba(245,240,232,0.16),0_2px_14px_rgba(0,0,0,0.5)]"
+                    key={`${partner}-${index}`}
+                  >
+                    {partner}
+                  </span>
+                ))}
+              </div>
+              <div aria-hidden="true" className="home-partners-strip__group">
+                {marqueePartners.map((partner, index) => (
+                  <span className="home-partners-strip__name" key={`${partner}-${index}`}>
+                    {partner}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
