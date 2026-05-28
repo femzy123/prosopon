@@ -16,7 +16,7 @@ export function ContactForm() {
     <section className="page-section section-parchment">
       <div className="container-prosopon grid gap-12 lg:grid-cols-[0.82fr_1fr]">
         <Reveal>
-          <form aria-label="Contact form" className="obsidian-panel p-6 sm:p-10" onSubmit={onSubmit}>
+          <form aria-label="Contact form" className="obsidian-panel p-6 sm:p-10 rounded-2xl" onSubmit={onSubmit}>
             {submitted ? (
               <div className="py-12 text-center" role="status">
                 <div className="mx-auto grid h-12 w-12 place-items-center rounded-full border border-primary text-primary">
@@ -39,7 +39,7 @@ export function ContactForm() {
                       Service interest
                     </label>
                     <select
-                      className="min-h-12 w-full rounded border border-input bg-[var(--black-brown)] px-3 text-sm text-foreground transition-colors focus:border-primary"
+                      className="min-h-12 w-full rounded border border-input bg-(--parchment) px-3 text-sm text-background transition-colors focus:border-primary"
                       id="service"
                       name="service"
                     >
@@ -54,7 +54,7 @@ export function ContactForm() {
                       Message
                     </label>
                     <textarea
-                      className="min-h-36 w-full resize-y rounded border border-input bg-[var(--black-brown)] px-3 py-3 text-sm text-foreground transition-colors focus:border-primary"
+                      className="min-h-36 w-full resize-y rounded border border-input bg-(--parchment) px-3 py-3 text-sm text-background transition-colors focus:border-primary"
                       id="message"
                       name="message"
                       required
@@ -115,7 +115,7 @@ function Field({
       </label>
       <input
         autoComplete={autoComplete}
-        className="min-h-12 w-full rounded border border-input bg-[var(--black-brown)] px-3 text-sm text-foreground transition-colors focus:border-primary"
+        className="min-h-12 w-full rounded border border-input bg-[var(--parchment)] px-3 text-sm text-background transition-colors focus:border-primary"
         id={name}
         name={name}
         required={required}

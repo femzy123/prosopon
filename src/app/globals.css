@@ -268,16 +268,15 @@
   .page-section {
     position: relative;
     overflow: hidden;
-    border-bottom: 1px solid rgba(196, 169, 108, 0.1);
+    border-bottom: 0;
     background:
-      linear-gradient(180deg, rgba(245, 240, 232, 0.018), transparent 36%),
-      linear-gradient(180deg, transparent 72%, rgba(16, 14, 10, 0.22));
+      linear-gradient(180deg, rgba(245, 240, 232, 0.018), transparent 36%);
     padding-block: clamp(5rem, 9vw, 8.25rem);
   }
 
   .page-section::before {
     position: absolute;
-    inset: -8%;
+    inset: 0;
     z-index: 0;
     pointer-events: none;
     content: "";
@@ -294,25 +293,7 @@
         rgba(245, 240, 232, 0.018) 78.04%,
         transparent 78.16% 100%
       );
-    background-size:
-      145% 145%,
-      128% 128%;
     opacity: 0.7;
-    transform: translate3d(-4%, 0, 0) scale(1.045);
-    animation: architectural-drift 30s cubic-bezier(0.22, 1, 0.36, 1) infinite
-      alternate;
-    will-change: transform, opacity, background-position;
-  }
-
-  .page-section::after {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    content: "";
-    opacity: 0.055;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23noise)' opacity='.55'/%3E%3C/svg%3E");
-    mix-blend-mode: soft-light;
   }
 
   .page-section > * {
@@ -328,7 +309,7 @@
     --border: rgba(92, 80, 64, 0.2);
     --input: rgba(92, 80, 64, 0.24);
     --ring: var(--antique-gold);
-    border-bottom-color: rgba(92, 80, 64, 0.18);
+    border-bottom-color: transparent;
     background:
       linear-gradient(90deg, rgba(245, 240, 232, 0.96), rgba(245, 240, 232, 0.82)),
       linear-gradient(112deg, transparent 0 17%, rgba(196, 169, 108, 0.24) 17.07%, transparent 17.28%),
@@ -339,31 +320,9 @@
 
   .section-parchment::before {
     background:
-      linear-gradient(108deg, transparent 0 12%, rgba(196, 169, 108, 0.26) 12.08%, transparent 12.22% 100%),
-      linear-gradient(78deg, transparent 0 78%, rgba(92, 80, 64, 0.18) 78.04%, transparent 78.16% 100%),
-      linear-gradient(132deg, transparent 0 42%, rgba(196, 169, 108, 0.1) 42.08%, transparent 42.24% 100%);
-    background-size:
-      145% 145%,
-      128% 128%,
-      150% 150%;
-    opacity: 0.82;
-  }
-
-  .section-parchment::after {
-    opacity: 0.07;
-    mix-blend-mode: multiply;
-  }
-
-  .section-hero-noir::before {
-    background:
-      linear-gradient(118deg, transparent 0 25%, rgba(196, 169, 108, 0.085) 25.08%, transparent 25.24% 100%),
-      linear-gradient(82deg, transparent 0 72%, rgba(245, 240, 232, 0.034) 72.04%, transparent 72.18% 100%),
-      linear-gradient(154deg, rgba(92, 80, 64, 0.16) 0 13%, transparent 34%);
-    background-size:
-      145% 145%,
-      128% 128%,
-      120% 120%;
-    opacity: 0.9;
+      linear-gradient(108deg, transparent 0 12%, rgba(196, 169, 108, 0.2) 12.08%, transparent 12.22% 100%),
+      linear-gradient(78deg, transparent 0 78%, rgba(92, 80, 64, 0.13) 78.04%, transparent 78.16% 100%);
+    opacity: 0.78;
   }
 
   .section-parchment .label-mono {
@@ -405,49 +364,11 @@
   }
 
   .home-partners-strip {
-    position: relative;
-    overflow: hidden;
-    border-bottom: 1px solid rgba(92, 80, 64, 0.2);
+    border-bottom: 0;
     background:
       linear-gradient(90deg, rgba(245, 240, 232, 0.96), rgba(245, 240, 232, 0.86)),
-      linear-gradient(112deg, transparent 0 20%, rgba(196, 169, 108, 0.28) 20.08%, transparent 20.28%),
       var(--parchment);
     color: var(--obsidian);
-  }
-
-  .home-partners-strip::before {
-    position: absolute;
-    inset: -12%;
-    z-index: 0;
-    pointer-events: none;
-    content: "";
-    background:
-      linear-gradient(112deg, transparent 0 19%, rgba(196, 169, 108, 0.18) 19.08%, transparent 19.24% 100%),
-      linear-gradient(72deg, transparent 0 71%, rgba(92, 80, 64, 0.12) 71.06%, transparent 71.18% 100%);
-    background-size:
-      142% 142%,
-      126% 126%;
-    opacity: 0.82;
-    transform: translate3d(-4%, 0, 0) scale(1.045);
-    animation: architectural-drift 32s cubic-bezier(0.22, 1, 0.36, 1) infinite
-      alternate;
-    will-change: transform, opacity, background-position;
-  }
-
-  .home-partners-strip::after {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    content: "";
-    opacity: 0.055;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23noise)' opacity='.55'/%3E%3C/svg%3E");
-    mix-blend-mode: multiply;
-  }
-
-  .home-partners-strip > * {
-    position: relative;
-    z-index: 1;
   }
 
   .home-partners-strip__label {
@@ -897,12 +818,6 @@
   }
 
   body::before {
-    animation: none !important;
-    transform: none !important;
-  }
-
-  .page-section::before,
-  .home-partners-strip::before {
     animation: none !important;
     transform: none !important;
   }

@@ -2,6 +2,8 @@ import Link from "next/link";
 import { SiteLogo } from "./site-logo";
 
 export function Footer() {
+  const year = new Date().getFullYear();
+
   return (
     <footer className="border-t border-border bg-[var(--black-brown)]">
       <div className="container-prosopon py-14">
@@ -41,7 +43,7 @@ export function Footer() {
               </li>
               <li>
                 <Link className="hover:text-foreground" href="/privacy">
-                  Privacy
+                  Privacy Policy
                 </Link>
               </li>
             </ul>
@@ -57,6 +59,9 @@ export function Footer() {
               </li>
             </ul>
           </div>
+        </div>
+        <div className="mt-12 border-t border-border pt-6 text-xs text-muted-foreground">
+          <p>&copy; Prosopon {year}. All rights reserved.</p>
         </div>
       </div>
     </footer>
