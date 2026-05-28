@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { BrainCircuit, BriefcaseBusiness, Compass, Cog, ShieldCheck, UsersRound } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { CtaSection } from "@/components/site/cta-section";
 import { Reveal, RevealItem, RevealStagger } from "@/components/site/reveal";
@@ -23,8 +24,14 @@ const stats = [
   { value: "100%", label: "Growth led by referral and delivery trust" },
 ];
 
-const partners = ["BMO", "TD", "Rogers", "TJX Canada", "Gov. of Alberta"];
-const marqueePartners = [...partners, ...partners];
+const leaders = [
+  { name: "Bank of Montreal", logo: "/leaders/bmo-blue-on-transparent-en.svg", width: 174, height: 42 },
+  { name: "TD Bank", logo: "/leaders/td-logo-desktop.png", width: 110, height: 42 },
+  { name: "Rogers Communications", logo: "/leaders/rogers.png", width: 148, height: 42 },
+  { name: "TJX Canada", logo: "/leaders/tjx-canada.png", width: 132, height: 42 },
+  { name: "Government of Alberta", logo: "/leaders/alberta.svg", width: 168, height: 42 },
+];
+const marqueeLeaders = [...leaders, ...leaders];
 
 const capabilities = [
   {
@@ -113,9 +120,13 @@ export default function HomePage() {
             </div>
           </div>
 
-          <aside
+          <Reveal
+            as="aside"
             className="surface-panel self-end"
             aria-label="Prosopon proof points"
+            delay={0.18}
+            x={64}
+            y={0}
           >
             <h2 className="border-b border-border px-5 py-5 text-[0.68rem] font-bold uppercase tracking-label text-muted-foreground">
               Delivery credibility
@@ -135,7 +146,7 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
-          </aside>
+          </Reveal>
         </div>
       </section>
 
@@ -145,19 +156,28 @@ export default function HomePage() {
           <div className="home-partners-strip__names">
             <div className="home-partners-strip__track">
               <div className="home-partners-strip__group">
-                {marqueePartners.map((partner, index) => (
-                  <span
-                    className="home-partners-strip__name max-md:[text-shadow:0_0_18px_rgba(245,240,232,0.65),0_2px_14px_rgba(245,240,232,0.16),0_2px_14px_rgba(0,0,0,0.5)]"
-                    key={`${partner}-${index}`}
-                  >
-                    {partner}
+                {marqueeLeaders.map((leader, index) => (
+                  <span className="home-partners-strip__name" key={`${leader.name}-${index}`}>
+                    <Image
+                      alt={leader.name}
+                      className="home-partners-strip__logo"
+                      height={leader.height}
+                      src={leader.logo}
+                      width={leader.width}
+                    />
                   </span>
                 ))}
               </div>
               <div aria-hidden="true" className="home-partners-strip__group">
-                {marqueePartners.map((partner, index) => (
-                  <span className="home-partners-strip__name" key={`${partner}-${index}`}>
-                    {partner}
+                {marqueeLeaders.map((leader, index) => (
+                  <span className="home-partners-strip__name" key={`${leader.name}-${index}`}>
+                    <Image
+                      alt=""
+                      className="home-partners-strip__logo"
+                      height={leader.height}
+                      src={leader.logo}
+                      width={leader.width}
+                    />
                   </span>
                 ))}
               </div>
@@ -166,7 +186,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="page-section section-parchment">
         <div className="container-prosopon">
           <Reveal className="grid gap-10 md:grid-cols-[minmax(0,0.72fr)_minmax(320px,0.45fr)] md:items-end">
             <SectionHeader
@@ -183,7 +203,7 @@ export default function HomePage() {
           <RevealStagger className="mt-14 grid gap-4 md:grid-cols-3">
             {capabilities.map((capability) => (
               <RevealItem className="h-full" key={capability.title}>
-                <article className="noir-card flex min-h-72 h-full flex-col p-7">
+                <article className="parchment-card flex min-h-72 h-full flex-col p-7">
                   <span className="grid h-10 w-10 place-items-center rounded-full border border-border text-xs font-bold text-primary">
                     <capability.icon
                       aria-hidden="true"
@@ -210,7 +230,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="page-section section-hero-noir">
         <div className="container-prosopon grid gap-12 lg:grid-cols-[0.82fr_1fr]">
           <Reveal>
             <p className="label-mono mb-5">How we work</p>
@@ -226,7 +246,7 @@ export default function HomePage() {
           <RevealStagger className="grid gap-3" stagger={0.06}>
             {methods.map(([number, title, body]) => (
               <RevealItem key={number}>
-                <article className="surface-panel grid grid-cols-[4.5rem_1fr] gap-5 p-5">
+                <article className="surface-panel grid grid-cols-[4.5rem_1fr] gap-5 p-5 transition-transform duration-200 hover:-translate-y-1 hover:border-primary/60">
                   <strong className="label-mono">{number}</strong>
                   <div>
                     <h3 className="text-xl font-extrabold tracking-tight">
@@ -241,10 +261,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="page-section section-parchment">
         <div className="container-prosopon">
           <Reveal className="grid border border-border bg-border lg:grid-cols-[minmax(0,0.56fr)_minmax(320px,1fr)]">
-            <div className="surface-panel border-0 p-7 sm:p-10">
+            <div className="obsidian-panel border-0 p-7 sm:p-10">
               <p className="label-mono mb-5">Why choose us</p>
               <h2 className="section-title">
                 Senior judgment without the weight of a large firm.
@@ -257,7 +277,7 @@ export default function HomePage() {
             </div>
             <div className="grid gap-px bg-border sm:grid-cols-2">
               {reasons.map((reason) => (
-                <article className="bg-card p-7 sm:p-10" key={reason.title}>
+                <article className="bg-card p-7 transition-transform duration-200 hover:-translate-y-1 hover:bg-white sm:p-10" key={reason.title}>
                   <span className="grid h-10 w-10 place-items-center rounded-full border border-border text-primary">
                     <reason.icon
                       aria-hidden="true"

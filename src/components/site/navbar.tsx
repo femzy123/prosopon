@@ -52,7 +52,7 @@ export function Navbar() {
                 key={link.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "text-sm text-muted-foreground transition-colors hover:text-foreground",
+                  "rounded px-2 py-1 text-sm text-muted-foreground transition-[color,background-color] hover:bg-secondary/70 hover:text-primary",
                   active && "text-primary",
                 )}
                 href={link.href}
@@ -97,7 +97,7 @@ export function Navbar() {
                   key={link.href}
                   aria-current={active ? "page" : undefined}
                   className={cn(
-                    "min-h-11 rounded border border-transparent px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:border-border hover:bg-secondary hover:text-foreground",
+                    "min-h-11 rounded border border-transparent px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:border-primary/50 hover:bg-secondary hover:text-primary",
                     active && "text-primary",
                   )}
                   href={link.href}

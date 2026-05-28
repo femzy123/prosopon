@@ -44,7 +44,7 @@ const partners = [
 export default function AboutPage() {
   return (
     <>
-      <section className="page-section pt-24 sm:pt-32">
+      <section className="page-section section-hero-noir pt-24 sm:pt-32">
         <div className="container-prosopon">
           <Reveal>
             <p className="label-mono mb-6">About</p>
@@ -60,7 +60,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="page-section section-parchment">
         <div className="container-prosopon grid gap-12 lg:grid-cols-[0.82fr_1fr]">
           <Reveal>
             <SectionHeader eyebrow="Mission" title="Confidence in execution." />
@@ -83,7 +83,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="page-section section-hero-noir">
         <div className="container-prosopon">
           <Reveal>
             <SectionHeader eyebrow="What sets us apart" title="Our competitive edge." />
@@ -91,7 +91,7 @@ export default function AboutPage() {
           <RevealStagger className="mt-14 grid gap-px border border-border bg-border md:grid-cols-2">
             {differentiators.map(([title, description]) => (
               <RevealItem key={title}>
-                <article className="bg-card p-7 sm:p-10">
+                <article className="bg-card p-7 transition-transform duration-200 hover:-translate-y-1 hover:bg-[var(--bark-2)] sm:p-10">
                   <h2 className="text-2xl font-extrabold tracking-tight">{title}</h2>
                   <p className="mt-3 text-sm text-muted-foreground">{description}</p>
                 </article>
@@ -101,7 +101,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="page-section section-parchment">
         <Reveal className="container-prosopon partners-proof">
           <div className="flex flex-col items-start gap-6 justify-center">
             <div>
@@ -124,7 +124,7 @@ export default function AboutPage() {
         </Reveal>
       </section>
 
-      <section className="page-section">
+      <section className="page-section section-hero-noir">
         <div className="container-prosopon">
           <Reveal>
             <SectionHeader

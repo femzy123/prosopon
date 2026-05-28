@@ -62,7 +62,7 @@ const studies = [
 export default function CaseStudiesPage() {
   return (
     <>
-      <section className="page-section pt-24 sm:pt-32">
+      <section className="page-section section-hero-noir pt-24 sm:pt-32">
         <div className="container-prosopon">
           <Reveal>
             <p className="label-mono mb-6">Selected work</p>
@@ -75,11 +75,11 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="page-section section-parchment">
         <RevealStagger className="container-prosopon grid gap-5" stagger={0.08}>
           {studies.map((study) => (
             <RevealItem key={study.company}>
-              <article className="case-study-card surface-panel group grid gap-9 p-6 sm:p-10 lg:grid-cols-[minmax(0,0.65fr)_minmax(320px,1fr)]">
+              <article className="parchment-card case-study-card group grid gap-9 p-6 sm:p-10 lg:grid-cols-[minmax(0,0.65fr)_minmax(320px,1fr)]">
                 <div>
                   <span className="grid h-11 w-11 place-items-center rounded-full border border-border text-primary transition-colors duration-300 group-hover:border-primary/60 group-hover:text-[var(--gold-bright)]">
                     <study.icon aria-hidden="true" className="h-5 w-5" strokeWidth={1.7} />
@@ -97,7 +97,7 @@ export default function CaseStudiesPage() {
                   ))}
                   <div className="mt-7 grid gap-px border border-border bg-border sm:grid-cols-3">
                     {study.points.map(([value, label]) => (
-                      <div className="bg-[var(--black-brown)] p-5" key={label}>
+                      <div className="parchment-stat p-5" key={label}>
                         <strong className="block text-xl tracking-tight">{value}</strong>
                         <span className="mt-2 block text-xs leading-relaxed text-muted-foreground">
                           {label}

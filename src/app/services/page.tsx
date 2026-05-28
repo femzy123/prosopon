@@ -87,7 +87,7 @@ const models = [
 export default function ServicesPage() {
   return (
     <>
-      <section className="page-section pt-24 sm:pt-32">
+      <section className="page-section section-hero-noir pt-24 sm:pt-32">
         <div className="container-prosopon">
           <Reveal>
             <p className="label-mono mb-6">Services</p>
@@ -100,12 +100,12 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="page-section section-parchment">
         <div className="container-prosopon">
           <RevealStagger className="grid gap-4 lg:grid-cols-3">
             {services.map((service) => (
               <RevealItem className="h-full" key={service.title}>
-                <article className="noir-card flex min-h-80 h-full flex-col p-7">
+                <article className="parchment-card flex min-h-80 h-full flex-col p-7">
                   <div className="flex items-center gap-2">
                     <span className="grid h-10 w-10 place-items-center rounded-full border border-border text-primary">
                       <service.icon aria-hidden="true" className="h-5 w-5" strokeWidth={1.7} />
@@ -125,7 +125,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="page-section section-hero-noir">
         <div className="container-prosopon">
           <Reveal className="grid gap-10 md:grid-cols-[minmax(0,0.8fr)_minmax(320px,0.45fr)] md:items-end">
             <SectionHeader eyebrow="Engagement models" title="Flexible by design, senior by default." />
@@ -137,7 +137,7 @@ export default function ServicesPage() {
           <RevealStagger className="mt-12 grid gap-3" stagger={0.06}>
             {models.map((model) => (
               <RevealItem key={model.title}>
-                <article className="surface-panel grid gap-5 p-6 sm:grid-cols-[4rem_1fr] sm:p-7">
+                <article className="surface-panel grid gap-5 p-6 transition-transform duration-200 hover:-translate-y-1 hover:border-primary/60 sm:grid-cols-[4rem_1fr] sm:p-7">
                   <span className="grid h-10 w-10 place-items-center rounded-full border border-border text-primary">
                     <model.icon aria-hidden="true" className="h-5 w-5" strokeWidth={1.7} />
                   </span>

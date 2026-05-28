@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="page-section pt-24 sm:pt-32">
+      <section className="page-section section-hero-noir pt-24 sm:pt-32">
         <div className="container-prosopon grid gap-12 lg:grid-cols-[0.82fr_1fr]">
           <Reveal>
             <p className="label-mono mb-6">Start the conversation</p>
@@ -26,7 +26,7 @@ export default function ContactPage() {
             </p>
           </Reveal>
           <Reveal className="grid gap-4" delay={0.08}>
-            <aside className="surface-panel p-7 sm:p-10">
+            <aside className="surface-panel p-7 transition-transform duration-200 hover:-translate-y-1 hover:border-primary/60 sm:p-10">
               <h2 className="mb-5 text-2xl font-extrabold tracking-tight text-primary">
                 Good fit conversations
               </h2>
@@ -36,7 +36,7 @@ export default function ContactPage() {
                 <li>AI-informed advisory tied to operations, analytics, or enterprise delivery</li>
               </ul>
             </aside>
-            <aside className="surface-panel p-7 sm:p-10">
+            <aside className="surface-panel p-7 transition-transform duration-200 hover:-translate-y-1 hover:border-primary/60 sm:p-10">
               <h2 className="mb-5 text-2xl font-extrabold tracking-tight text-primary">
                 Direct contact
               </h2>

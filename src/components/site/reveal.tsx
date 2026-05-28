@@ -6,15 +6,17 @@ import type { ReactNode } from "react";
 interface RevealProps {
   children: ReactNode;
   delay?: number;
+  x?: number;
   y?: number;
   className?: string;
-  as?: "div" | "section" | "article" | "li" | "header" | "h1" | "h2" | "p";
+  as?: "div" | "section" | "article" | "aside" | "li" | "header" | "h1" | "h2" | "p";
   once?: boolean;
 }
 
 export function Reveal({
   children,
   delay = 0,
+  x = 0,
   y = 20,
   className,
   as = "div",
@@ -23,9 +25,10 @@ export function Reveal({
   const reduce = useReducedMotion();
   const Comp = motion[as] as typeof motion.div;
   const variants: Variants = {
-    hidden: { opacity: reduce ? 1 : 0, y: reduce ? 0 : y },
+    hidden: { opacity: reduce ? 1 : 0, x: reduce ? 0 : x, y: reduce ? 0 : y },
     show: {
       opacity: 1,
+      x: 0,
       y: 0,
       transition: { duration: reduce ? 0 : 0.52, ease: [0.22, 1, 0.36, 1], delay },
     },

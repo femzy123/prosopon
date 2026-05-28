@@ -13,10 +13,10 @@ export function ContactForm() {
   }
 
   return (
-    <section className="page-section">
+    <section className="page-section section-parchment">
       <div className="container-prosopon grid gap-12 lg:grid-cols-[0.82fr_1fr]">
         <Reveal>
-          <form aria-label="Contact form" className="surface-panel p-6 sm:p-10" onSubmit={onSubmit}>
+          <form aria-label="Contact form" className="obsidian-panel p-6 sm:p-10" onSubmit={onSubmit}>
             {submitted ? (
               <div className="py-12 text-center" role="status">
                 <div className="mx-auto grid h-12 w-12 place-items-center rounded-full border border-primary text-primary">
@@ -72,7 +72,7 @@ export function ContactForm() {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <aside className="surface-panel p-7 sm:p-10">
+          <aside className="parchment-card p-7 sm:p-10">
             <p className="label-mono mb-6">What happens next</p>
             <ol className="grid gap-6 text-muted-foreground">
               <li>

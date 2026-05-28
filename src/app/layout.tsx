@@ -28,6 +28,18 @@ export const metadata: Metadata = {
   description:
     "Prosopon is a Canadian professional services firm helping organizations deliver complex transformation through structured execution, sector-aware advisory, and practical digital enablement.",
   authors: [{ name: "Prosopon" }],
+  icons: {
+    icon: [
+      {
+        url: "/favicon.svg",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/favicon-parchment.svg",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+  },
   openGraph: {
     title: "Prosopon | Transformation Delivery and Advisory",
     description:
