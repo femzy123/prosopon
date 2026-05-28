@@ -425,9 +425,6 @@
   }
 
   .home-partners-strip__name:hover {
-    border-color: rgba(196, 169, 108, 0.54);
-    background: rgba(255, 255, 255, 0.16);
-    box-shadow: 0 22px 44px rgba(46, 42, 34, 0.14);
     transform: translateY(-0.35rem);
   }
 
