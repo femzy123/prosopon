@@ -5,16 +5,16 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-[var(--black-brown)]">
+    <footer className="border-t border-border bg-(--black-brown)">
       <div className="container-prosopon py-14">
-        <div className="grid gap-10 lg:grid-cols-[1fr_12rem_14rem]">
+        <div className="grid gap-10 lg:grid-cols-[1fr_14rem]">
           <div>
             <Link aria-label="Prosopon home" className="inline-flex" href="/">
               <SiteLogo />
             </Link>
             <p className="mt-4 max-w-md text-sm text-muted-foreground">
-              Professional services for structured transformation delivery, advisory, and digital
-              enablement.
+              Professional services for structured transformation delivery,
+              advisory, and digital enablement.
             </p>
           </div>
 
@@ -45,17 +45,6 @@ export function Footer() {
                 <Link className="hover:text-foreground" href="/privacy">
                   Privacy Policy
                 </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h2 className="label-mono mb-4">Contact</h2>
-            <ul className="flex flex-col gap-2 text-sm text-muted-foreground">
-              <li>
-                <a className="hover:text-foreground" href="mailto:hello@prosopon.co">
-                  hello@prosopon.co
-                </a>
               </li>
             </ul>
           </div>

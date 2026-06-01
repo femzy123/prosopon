@@ -91,7 +91,7 @@ export default function AboutPage() {
           <RevealStagger className="mt-14 grid gap-px border border-border bg-border md:grid-cols-2">
             {differentiators.map(([title, description]) => (
               <RevealItem key={title}>
-                <article className="bg-card p-7 transition-transform duration-200 hover:-translate-y-1 hover:bg-[var(--bark-2)] sm:p-10">
+                <article className="bg-card p-7 transition-transform duration-200 hover:scale-105 hover:shadow-lg hover:shadow-secondary hover:bg-(--bark-2) sm:p-10">
                   <h2 className="text-2xl font-extrabold tracking-tight">{title}</h2>
                   <p className="mt-3 text-sm text-muted-foreground">{description}</p>
                 </article>

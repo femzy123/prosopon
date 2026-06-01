@@ -124,7 +124,7 @@ export default function HomePage() {
             as="aside"
             className="surface-panel self-end"
             aria-label="Prosopon proof points"
-            delay={0.18}
+            delay={1}
             x={64}
             y={0}
           >
@@ -277,7 +277,7 @@ export default function HomePage() {
             </div>
             <div className="grid gap-px bg-border sm:grid-cols-2">
               {reasons.map((reason) => (
-                <article className="bg-card p-7 transition-transform duration-200 hover:-translate-y-1 hover:bg-white sm:p-10" key={reason.title}>
+                <article className="bg-card p-7 transition-transform duration-200 hover:scale-105 hover:bg-white hover:shadow-xl hover:shadow-primary sm:p-10" key={reason.title}>
                   <span className="grid h-10 w-10 place-items-center rounded-full border border-border text-primary">
                     <reason.icon
                       aria-hidden="true"
