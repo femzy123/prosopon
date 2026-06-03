@@ -40,12 +40,10 @@ export default function ContactPage() {
               <h2 className="mb-5 text-2xl font-extrabold tracking-tight text-primary">
                 Direct contact
               </h2>
-              <p>
-                <a className="text-foreground hover:text-primary" href="mailto:hello@prosopon.co">
-                  hello@prosopon.co
-                </a>
+              <p className="text-foreground">Opening hours: 9am - 5pm, Monday - Friday.</p>
+              <p className="mt-4 text-muted-foreground">
+                All messages will be responded to within 48 hours.
               </p>
-              <p className="mt-4 text-muted-foreground">Initial inquiries are handled by email.</p>
             </aside>
           </Reveal>
         </div>
