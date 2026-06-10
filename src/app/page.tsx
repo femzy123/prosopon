@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import { BrainCircuit, BriefcaseBusiness, Compass, Cog, ShieldCheck, UsersRound } from "lucide-react";
+import { BrainCircuit, BriefcaseBusiness, Compass, Cog, ShieldCheck, UsersRound, MoveUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { BlogPostGrid } from "@/components/site/blog-post-grid";
 import { CtaSection } from "@/components/site/cta-section";
 import { Reveal, RevealItem, RevealStagger } from "@/components/site/reveal";
 import { SectionHeader } from "@/components/site/section-header";
+import { getBloggerPosts } from "@/lib/blogger";
+import type { BlogPost } from "@/lib/blogger-types";
 
 export const metadata: Metadata = {
   title: "Prosopon | Transformation Delivery and Advisory",
@@ -81,7 +84,9 @@ const reasons = [
   },
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
+  const latestPosts = await getHomeBlogPosts();
+
   return (
     <>
       <section className="relative -mt-19 min-h-dvh overflow-hidden border-b border-border bg-(--black-brown)">
@@ -261,7 +266,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="page-section section-parchment">
+      <section className="page-section section-parchment border-b-2">
         <div className="container-prosopon">
           <Reveal className="grid border border-border bg-border lg:grid-cols-[minmax(0,0.56fr)_minmax(320px,1fr)]">
             <div className="obsidian-panel border-0 p-7 sm:p-10">
@@ -298,7 +303,41 @@ export default function HomePage() {
         </div>
       </section>
 
+      {latestPosts.length ? (
+        <section className="page-section section-parchment">
+          <div className="container-prosopon">
+            <Reveal className="grid gap-8 md:grid-cols-[minmax(0,0.72fr)_auto] md:items-end">
+              <SectionHeader
+                eyebrow="Latest thinking"
+                title="Notes on delivery, transformation, and the work beneath the work."
+              />
+              <Link
+                className="label-mono inline-flex items-center gap-2 justify-self-start transition-colors hover:text-foreground md:justify-self-end"
+                href="/blog"
+              >
+                View all posts
+                <MoveUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} />
+              </Link>
+            </Reveal>
+            <Reveal className="mt-14">
+              <BlogPostGrid posts={latestPosts} />
+            </Reveal>
+          </div>
+        </section>
+      ) : null}
+
       <CtaSection />
     </>
   );
+}
+
+async function getHomeBlogPosts(): Promise<BlogPost[]> {
+  try {
+    const { posts } = await getBloggerPosts({ limit: 3 });
+
+    return posts;
+  } catch (error) {
+    console.error("Homepage Blogger posts failed to load", error);
+    return [];
+  }
 }
