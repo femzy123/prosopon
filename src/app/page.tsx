@@ -235,7 +235,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="page-section section-hero-noir">
+      <section className="page-section">
         <div className="container-prosopon grid gap-12 lg:grid-cols-[0.82fr_1fr]">
           <Reveal>
             <p className="label-mono mb-5">How we work</p>
@@ -304,7 +304,7 @@ export default async function HomePage() {
       </section>
 
       {latestPosts.length ? (
-        <section className="page-section section-parchment">
+        <section className="page-section">
           <div className="container-prosopon">
             <Reveal className="grid gap-8 md:grid-cols-[minmax(0,0.72fr)_auto] md:items-end">
               <SectionHeader
