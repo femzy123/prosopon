@@ -6,7 +6,7 @@ import { SectionHeader } from "@/components/site/section-header";
 export const metadata: Metadata = {
   title: "About | Prosopon",
   description:
-    "Prosopon Inc. is a Canadian professional services firm established in 2021, delivering advisory, project execution, and digital enablement.",
+    "Prosopon Inc. is a Canadian professional services firm established in 2015, delivering advisory, project execution, and digital enablement.",
   openGraph: {
     title: "About | Prosopon",
     description:
@@ -52,7 +52,7 @@ export default function AboutPage() {
               A Canadian firm built for the complex middle of transformation.
             </h1>
             <p className="mt-7 max-w-3xl text-lg text-muted-foreground sm:text-xl">
-              Prosopon Inc. was federally and provincially incorporated in August 2021 to
+              Prosopon Inc. was federally and provincially incorporated in August 2015 to
               help organizations navigate transformation initiatives that demand structured
               execution, cross-functional coordination, and technology-informed decisions.
             </p>

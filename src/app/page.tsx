@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 };
 
 const stats = [
-  { value: "2021", label: "Canadian incorporated firm" },
+  { value: "2015", label: "Canadian incorporated firm" },
   { value: "4", label: "Core sectors served" },
   { value: "5+", label: "Enterprise and public sector partners" },
   { value: "100%", label: "Growth led by referral and delivery trust" },
@@ -101,7 +101,7 @@ export default async function HomePage() {
         <div className="container-prosopon relative grid min-h-dvh items-center gap-14 pb-20 pt-36 lg:grid-cols-[minmax(0,0.9fr)_minmax(320px,0.55fr)]">
           <div>
             <p className="label-mono animate-rise mb-6">
-              Canadian professional services | Established 2021
+              Canadian professional services | Established 2015
             </p>
             <h1 className="hero-title animate-rise text-foreground [animation-delay:90ms]">
               Transformation, delivered with{" "}
