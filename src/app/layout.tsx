@@ -45,21 +45,14 @@ export const metadata: Metadata = {
     description:
       "Structured delivery, advisory, and practical digital enablement for regulated and operationally complex organizations.",
     type: "website",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Prosopon - Transformation, delivered with discipline.",
-      },
-    ],
+    images: "/og-image.png",
   },
   twitter: {
     card: "summary_large_image",
     title: "Prosopon | Transformation Delivery and Advisory",
     description:
       "Canadian professional services for transformation delivery, advisory, and digital enablement.",
-    images: ["/og-image.png"],
+    images: "/og-image.png",
   },
 };
 
