@@ -21,10 +21,7 @@ const jetBrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://prosoponinc.ca"),
-  title: {
-    default: "Prosopon | Transformation Delivery and Advisory",
-    template: "%s",
-  },
+  title: "Prosopon | Transformation Delivery and Advisory",
   description:
     "Prosopon is a Canadian professional services firm helping organizations deliver complex transformation through structured execution, sector-aware advisory, and practical digital enablement.",
   authors: [{ name: "Prosopon" }],
@@ -44,8 +41,11 @@ export const metadata: Metadata = {
     title: "Prosopon | Transformation Delivery and Advisory",
     description:
       "Structured delivery, advisory, and practical digital enablement for regulated and operationally complex organizations.",
+    url: "https://prosoponinc.ca",
+    siteName: "Prosopon Inc.",
     type: "website",
     images: "/og-image.png",
+    locale: "en_CA",
   },
   twitter: {
     card: "summary_large_image",
