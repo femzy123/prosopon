@@ -20,7 +20,7 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://prosopon.ca"),
+  metadataBase: new URL("https://prosoponinc.ca"),
   title: {
     default: "Prosopon | Transformation Delivery and Advisory",
     template: "%s",
